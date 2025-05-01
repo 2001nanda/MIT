@@ -1,0 +1,22 @@
+/**=====================
+     portfolio css start
+==========================**/
+.portfolio-section {
+    .grid-item {
+        .overlay {
+            overflow: hidden;
+        }
+        .portfolio-image {
+            transition: all 1s ease;
+        }
+        &:hover {
+            .portfolio-image {
+                transform: scale(1.2);
+                transition: all 1s ease;
+            }
+        }
+    }
+}
+/**=====================
+     portfolio css end
+==========================**/

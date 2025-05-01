@@ -1,0 +1,296 @@
+/**=====================
+     buttons css start
+==========================**/
+.btn {
+  font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 6px 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  position: relative;
+  &.btn-sm {
+      padding: 8px 20px;
+      font-size: 13px;
+  }
+  &.btn-solid {
+      background: var(--theme-deafult5);
+      border: 2px solid transparent;
+      color: $white;
+      &::after {
+          @extend %common-lightafter;
+          transition: 0.5s;
+          box-shadow: 0px 4px 20.5px 3px var(--theme-deafult5);
+          opacity: 0.3;
+      }
+      &:hover {
+          background: $white;
+          border: 2px solid var(--theme-deafult5);
+          color: var(--theme-deafult5);
+          &::after {
+              box-shadow: unset;
+              transition: 0.5s;
+          }
+      }
+      &.color-7 {
+          background: var(--theme-deafult10);
+          &::after {
+              box-shadow: 0px 4px 20.5px 3px var(--theme-deafult10);
+          }
+          &:hover {
+              background: $white;
+              border: 2px solid var(--theme-deafult10);
+              color: var(--theme-deafult10);
+              &::after {
+                  box-shadow: unset;
+                  transition: 0.5s;
+              }
+          }
+      }
+  }
+  &.btn-gradient {
+      color: $white;
+      background-size: 200% auto;
+      transition: all 0.5s ease;
+      &::after {
+          @extend %common-lightafter;
+          opacity: 0;
+      }
+      &.color-1 {
+          background-image: var(--theme-gradient1);
+          &::after {
+              opacity: 0.25;
+              box-shadow: 3.346px 3.716px 12.5px var(--theme-deafult2);
+          }
+          &:hover {
+              background-position: right center;
+          }
+          &:not(:disabled):not(.disabled):active,
+          &:not(:disabled):not(.disabled).active {
+              background-image: var(--theme-gradient1);
+          }
+      }
+      &.color-2 {
+          background-image: var(--theme-gradient5);
+          &::after {
+              opacity: 0.35;
+              box-shadow: 3.346px 3.716px 12.5px var(--theme-deafult3);
+          }
+          &:hover {
+              background-position: right center;
+          }
+          &:not(:disabled):not(.disabled):active,
+          &:not(:disabled):not(.disabled).active {
+              background-image: var(--theme-gradient5);
+          }
+      }
+      &.color-4 {
+          background-image: var(--theme-gradient8);
+          &::after {
+              opacity: 0.3;
+              box-shadow: -5.15px 8.572px 25px var(--theme-deafult6);
+          }
+          &:hover {
+              background-position: right center;
+          }
+          &:not(:disabled):not(.disabled):active,
+          &:not(:disabled):not(.disabled).active {
+              background-image: var(--theme-gradient8);
+          }
+      }
+      &.color-6 {
+          background-image: var(--theme-gradient10);
+          &::after {
+              opacity: 0.3;
+              box-shadow: -5.15px 8.572px 25px var(--theme-deafult8);
+          }
+          &:hover {
+              background-position: right center;
+          }
+          &:not(:disabled):not(.disabled):active,
+          &:not(:disabled):not(.disabled).active {
+              background-image: var(--theme-gradient10);
+          }
+      }
+      &.btn-pill {
+          &::after {
+              border-radius: 30px;
+          }
+      }
+  }
+  &.btn-light-bg {
+      background-color: transparent;
+      border: 2px solid transparent;
+      transition: all 0.5s ease;
+      &::after {
+          @extend %common-lightafter;
+          background-color: var(--theme-deafult3);
+          opacity: 0.1;
+      }
+      span {
+          background: var(--theme-gradient6);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+      }
+      &:hover {
+          border: 2px solid var(--theme-deafult3);
+          background: $white;
+          transition: all 0.5s ease;
+          &::after {
+              background: $white;
+          }
+      }
+      &.color-3 {
+          color: var(--theme-deafult5);
+          border: none;
+          &::after {
+              background-color: var(--theme-deafult5);
+          }
+          &:hover {
+              &::after { 
+                  opacity: 1;
+                  z-index: -1;
+              }
+              &::before {
+                  @extend %common-lightafter;
+                  box-shadow: 0px 10px 12.5px var(--theme-deafult5);
+                  transition: 0.5s;
+                  opacity: 0.35;
+              }
+          }
+      }
+      &.color-7 {
+          color: var(--theme-deafult10);
+          border: none;
+          &::after {
+              background-color: var(--theme-deafult10);
+          }
+          &:hover {
+              color: $white;
+              &::after { 
+                  opacity: 1;
+                  z-index: -1;
+              }
+              &::before {
+                  @extend %common-lightafter;
+                  box-shadow: 0px 10px 12.5px var(--theme-deafult10);
+                  transition: 0.5s;
+                  opacity: 0.35;
+              }
+          }
+      }
+  }
+  &.btn-white {
+      background-color: $white;
+      border: 2px solid transparent;
+      transition: all 0.5s ease;
+      span {
+          @extend %gradient-text1;
+          transition: all 0.5s ease;
+      }
+      &:hover {
+          box-shadow: 0 4px 6px 2px rgba($black, 0.1);
+          transition: all 0.5s ease;
+      }
+      &.color-6 {
+          span {
+              background: var(--theme-gradient11);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+          }
+      }
+  }
+  &.btn-dashed {
+      border: 1px dashed $gray-30;
+      color: $theme-font-color;
+      background: transparent;
+      transition: all 0.5s ease;
+      &:hover {
+          background: $gray-30;
+          color: $white;
+          transition: all 0.5s ease;
+          background-color: transparent;
+          &::after {
+              opacity: 0.1;
+              @extend %common-lightafter;
+          }
+      }
+      &.color-1 {
+          &:hover {
+              border-color: var(--theme-deafult2);
+              color: var(--theme-deafult2);
+              &::after {
+                  background: var(--theme-deafult2);
+              }
+          }
+      }
+      &.color-2 {
+          &:hover {
+              border-color: var(--theme-deafult4);
+              color: var(--theme-deafult4);
+              &::after {
+                  background: var(--theme-deafult4);
+              }
+          }
+      }
+      &.color-4 {
+          &:hover {
+              border-color: var(--theme-deafult7);
+              color: var(--theme-deafult7);
+              &::after {
+                  background: var(--theme-deafult7);
+              }
+          }
+      }
+      &.color-6 {
+          &:hover {
+              border-color: var(--theme-deafult9);
+              color: var(--theme-deafult9);
+              &::after {
+                  background: var(--theme-deafult9);
+              }
+          }
+      }
+  }
+  &.btn-pill {
+      border-radius: 30px;
+      &:hover {
+          &::after {
+              border-radius: 30px;
+          }
+      }
+      &::after {
+          border-radius: 30px;
+      }
+  }
+  &.btn-flat {
+      border-radius: 0;
+      padding: 6px 30px 8px;
+  }
+  &.btn-lg {
+      padding: 12px 30px 10px;
+      font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+  }
+}
+.btns {
+  margin-bottom: -10px;
+ .btn {
+      margin-bottom: 10px;
+ }
+}
+
+.theme-buttons {
+  > div {
+    margin-bottom: -15px;
+      .btn {
+          margin-bottom: 15px;
+          + .btn {
+              margin-left: 10px;
+          }
+      }
+  }
+}
+
+/**=====================
+   buttons css end
+==========================**/

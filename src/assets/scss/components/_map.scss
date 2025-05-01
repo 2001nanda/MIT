@@ -1,0 +1,147 @@
+/**=====================
+     map css start
+==========================**/
+// map css
+.map {
+    z-index: 1;
+}
+.map-section {
+    position: relative;
+    z-index: 1;
+    iframe,
+    .map {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+.gm-style div[title] {
+    opacity: 1 !important;
+}
+.gm-style div[title] img {
+    display: block !important;
+    height: 50px !important;
+    width: auto !important;
+}
+.add-animation {
+    animation: 1s linear infinite bounce-1;
+}
+
+.add-filter {
+    filter: grayscale(1);
+}
+
+.infoBox {
+    > img {
+        background: $white;
+    }
+    .marker-detail {
+        background: $white;
+        overflow: hidden;
+        position: relative;
+        img {
+            height: auto;
+            width: 210px;
+        }
+        .label {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            font-size: 10px;
+            padding: 4px 8px 3px;
+        }
+        .detail-part {
+            padding: 10px;
+            h6 {
+                font-weight: 600;
+            }
+            ul {
+                margin-bottom: 15px;
+                li {
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    font-size: 13px;
+                    &:first-child {
+                        padding-left: 0;
+                    }
+                    &:last-child {
+                        padding-right: 0;
+                    }
+                }
+            }
+            span,
+            a {
+                font-size: 14px;
+                font-weight: 500;
+            }
+            a {
+                float: right;
+                color: var(--theme-deafult3);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.leaflet-popup-tip-container {
+    width: 20px;
+    height: 20px;
+    margin-left: -15px;
+}
+.leaflet-marker-icon {
+    &.leaflet-interactive {
+        width: 35px !important;
+        height: 38px !important;
+    }
+}
+.leaflet-top, .leaflet-bottom {
+    z-index: 1;
+}
+.leaflet-control {
+    z-index: 8;
+}
+.leaflet-shadow-pane {
+    img {
+        transform: none !important;
+    }
+}
+.H_ib_body {
+    bottom: 48px;
+}
+.H_ib_tail {
+    margin: -53px -10px;
+}
+.H_ib_content {
+    line-height: 13px;
+}
+.MicrosoftMap {
+    .Infobox {
+        border-radius: 0 !important;
+        border: none !important;
+        &.no-title {
+            .infobox-info {
+                margin-right: 0 !important;
+            }
+        }
+        .infobox-body {
+            width: auto !important;
+            height: 100% !important;
+            max-height: 100% !important;
+            padding-bottom: 0 !important;
+        }
+        .infobox-info {
+            padding: 0 !important;
+            max-height: max-content !important;
+            color: unset !important;
+            font-family: $font_1, $font_3 !important;
+        }
+    }
+    .infobox-close {
+        z-index: 1;
+    }
+}
+
+/**=====================
+     map css end
+==========================**/

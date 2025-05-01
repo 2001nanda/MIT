@@ -1,0 +1,44 @@
+/*! -----------------------------------------------------------------------------------
+
+    Template Name: Rica theme
+    Template URI: http://admin.pixelstrap.com/Rica/theme
+    Description: This is Real estate theme
+    Author: Pixelstrap
+    Author URI: https://themeforest.net/user/pixelstrap
+
+-----------------------------------------------------------------------------------
+ */
+
+@import "utils/variables";
+@import "utils/mixins";
+
+@import "vendors/font-awesome";
+@import "vendors/chartist";
+
+@import "base/reset";
+
+@import "components/keyframes";
+@import "components/buttons";
+@import "components/labels";
+@import "components/blog";
+@import "components/about";
+@import "components/service";
+@import "components/property";
+@import "components/portfolio";
+@import "components/map";
+@import "components/slick";
+
+@import "components/card";
+@import "components/tree";
+
+// layout
+@import "layout/header";
+@import "layout/dark";
+
+// pages
+@import "pages/inner-pages";
+
+@import "theme/document";
+@import "theme/theme";
+@import "theme/responsive";
+@import "theme/document-responsive";

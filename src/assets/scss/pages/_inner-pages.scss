@@ -1,0 +1,236 @@
+/**=====================
+     Inner pages css start
+==========================**/
+.card {
+    .card-header {
+        border-bottom: none;
+    }
+}
+// brand page css
+.bg-light {
+    background-color: rgba($dark-20, 0.3);
+}
+.bg-light-blue {
+    background-color: $light-blue;
+}
+// filter css
+.left-sidebar {
+    .row {
+        margin-bottom: -30px;
+        > div {
+            margin-bottom: 30px;
+        }
+    }
+    .dropdown {
+        border: 1px solid $light-border;
+        border-radius: 4px;
+        .dropdown-toggle {
+            padding: 12px 20px 10px;
+            display: block;
+        }
+    }
+}
+.left-sidebar,
+.blog-sidebar {
+    box-shadow: $common-box-shadow;
+    padding: 30px;
+    border-radius: 8px;
+}
+.dropdown {
+    &.show {
+        .dropdown-toggle {
+            i {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    .dropdown-toggle {
+        display: block;
+        cursor: pointer;
+        i {
+            float: right;
+            margin-top: 4px;
+            color: rgba($theme-sub-font-color, 0.8);
+        }
+        &::after {
+            display: none;
+        }
+    }
+    .dropdown-menu {
+        width: 100%;
+        margin-top: 6px;
+        animation: fadeIn 0.5s;
+        border-color: $light-border;
+        .dropdown-item {
+            font-size: 14px;
+            font-family: $font_2, $font_3;
+            transition: 0.5s;
+            padding: 6px 20px;
+            &:focus {
+                background: transparent;
+            }
+            &:active,
+            &.active {
+                background: $light-border;
+                color: $title-color;
+            }
+        }
+    }
+}
+// faq page css
+.accordion {
+    .card {
+        border: none;
+        box-shadow: $common-box-shadow;
+        + .card {
+            margin-top: 20px;
+        }
+    }
+    .card-header {
+        background-color: transparent;
+        padding: 20px 50px 20px 30px;
+        position: relative;
+        .card-link {
+            color: $theme-sub-font-color;
+            &::after {
+                position: absolute;
+                right: 30px;
+                top: 21px;
+                content: "\f054";
+                font-family: $font-awesome;
+                color: $theme-sub-font-color;
+                font-weight: 900;
+                transition: 0.5s ease;
+            }
+            &[aria-expanded="true"] {
+                &::after { 
+                    transform: rotate(90deg);
+                    transition: 0.5s ease;
+                }
+            }
+        }
+    }
+    .card-body {
+        color: $light-color;
+        font-family: $font_1, $font_3;
+        border-top: 1px solid $light-border;
+    }
+}
+// user dashboard css
+.table-bordernone {
+    tr {
+        th, td {
+            border: none;
+        }
+        th {
+            font-weight: 400;
+        }
+    }
+}
+.modal-header {
+    .close {
+        font-weight: 500;
+    }
+}
+input[type="date"] {
+    text-transform: inherit;
+}
+.gj-datepicker  {
+    .btn-outline-secondary {
+        padding: 12px 20px;
+        &:not(:disabled) {
+            &:not(.disabled) {
+                &:active {
+                    background-color: transparent;
+                    color: inherit;
+                    box-shadow: none;
+                    border-color: $light-color;
+                }
+            }
+            &:not(.disabled).active {
+                background-color: transparent;
+                color: inherit;
+            }
+        }
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    .show {
+        >.btn-outline-secondary.dropdown-toggle {
+            border: transparent;
+            background-color: transparent;
+            color: inherit;
+        }
+    }
+}
+.gj-picker {
+    div[role=navigator] div[role=period] {
+        font-family: $font_1, $font_3;
+    }
+}
+.gj-picker-bootstrap {
+    table {
+        tr {
+            td {
+                font-family: $font_1, $font_3;
+                &.today {
+                    div {
+                        color: var(--theme-deafult3);
+                    }
+                }
+                &.selected {
+                    &.gj-cursor-pointer {
+                        div {
+                            background-color: var(--theme-deafult3);
+                            border-color: var(--theme-deafult3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    .switch-state {
+        border-radius: 20px;
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #f4f4f4;
+        transition: .4s;
+        &:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: #fff;
+            transition: .4s;
+            border-radius: 20px;
+        }
+    }
+    input {
+        display: none;
+        &:checked {
+            +.switch-state {
+                background-color: $success-color;
+                &:before {
+                    transform: translateX(26px);
+                }
+            }
+        }
+    }
+}
+/**=====================
+     Inner pages css end
+==========================**/

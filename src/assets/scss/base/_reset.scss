@@ -1,0 +1,535 @@
+/**=====================
+     Reset css start
+==========================**/
+/*====== Padding css starts ======*/
+$i: 0;
+@while $i<=50 {
+  .p-#{$i} {
+    padding: #{$i}px;
+  }
+  $i: $i + 5;
+}
+/*====== Padding css ends ======*/
+
+/*====== Padding-left css starts ======*/
+$i: 0;
+@while $i<=50 {
+  .p-l-#{$i} {
+    padding-left: #{$i}px;
+  }
+  $i: $i + 5;
+}
+/*====== Padding-left css ends ======*/
+
+/*====== Padding-top css starts ======*/
+$i: 0;
+@while $i<=50 {
+  .p-t-#{$i} {
+    padding-top: #{$i}px !important;
+  }
+  $i: $i + 5;
+}
+/*====== Padding-top css ends ======*/
+
+/*====== Padding-bottom css starts ======*/
+$i: 0;
+@while $i<=50 {
+  .p-b-#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+  $i: $i + 5;
+}
+/*====== Padding-bottom css ends ======*/
+
+/*====== Padding-right css starts ======*/
+$i: 0;
+@while $i<=50 {
+  .p-r-#{$i} {
+    padding-right: #{$i}px;
+  }
+  $i: $i + 5;
+}
+/*====== Padding-right css ends ======*/
+
+/*====== Margin css starts ======*/
+$i: 0;
+@while $i<=50 {
+  .m-#{$i} {
+    margin: #{$i}px !important;
+  }
+  $i: $i + 5;
+}
+/*====== Margin css ends ======*/
+
+/*====== Margin-top css starts ======*/
+$i: 0;
+@while $i<=50 {
+  .m-t-#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  $i: $i + 5;
+}
+/*====== Margin-top css ends ======*/
+
+/*====== Margin-Bottom css starts ======*/
+$i: 0;
+@while $i<=50 {
+  .m-b-#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  $i: $i + 5;
+}
+/*====== Margin-Bottom css ends ======*/
+
+/*====== Margin-left css starts ======*/
+$i: 0;
+@while $i<=50 {
+  .m-l-#{$i} {
+    margin-left: #{$i}px !important;
+  }
+  $i: $i + 5;
+}
+/*====== Margin-left css ends ======*/
+
+/*====== Margin-right css starts ======*/
+$i: 0;
+@while $i<=50 {
+  .m-r-#{$i} {
+    margin-right: #{$i}px;
+  }
+  $i: $i + 5;
+}
+/*====== Margin-right css ends ======*/
+
+/*====== Image-sizes css starts ======*/
+$i: 10;
+@while $i<=100 {
+  .img-#{$i} {
+    width: #{$i}px !important;
+  }
+  $i: $i + 10;
+}
+/*====== Image-sizes css ends ======*/
+
+/*====== font family css starts ======*/
+.font-roboto {
+  font-family: $font_1, $font_3;
+}
+.font-rubik {
+  font-family: $font_2, $font_3;
+}
+/*====== font family css end ======*/
+
+/*====== image ratio css starts ======*/
+.ratio_40 {
+  .bg-size {
+    &:before {
+      padding-top: 40%;
+      content: "";
+      display: block;
+    }
+  }
+}
+.ratio_45 {
+  .bg-size {
+    &:before {
+      padding-top: 45%;
+      content: "";
+      display: block;
+    }
+  }
+}
+.ratio2_1 {
+  .bg-size {
+    &:before {
+      padding-top: 50%;
+      content: "";
+      display: block;
+    }
+  }
+}
+.ratio_55 {
+  .bg-size {
+    &:before {
+      padding-top: 55%;
+      content: "";
+      display: block;
+    }
+  }
+}
+.ratio_59 {
+  .bg-size {
+    &:before {
+      padding-top: 59%;
+      content: "";
+      display: block;
+    }
+  }
+}
+.ratio2_3 {
+  .bg-size {
+    &:before {
+      padding-top: 60%;
+      content: "";
+      display: block;
+    }
+  }
+}
+.ratio3_2 {
+  .bg-size {
+    &:before {
+      padding-top: 66.66%;
+      content: "";
+      display: block;
+    }
+  }
+}
+.ratio_90 {
+  .bg-size {
+    &:before {
+      padding-top: 93%;
+      content: "";
+      display: block;
+    }
+  }
+}
+.ratio_landscape {
+  .bg-size {
+    &:before {
+      padding-top: 75%;
+      content: "";
+      display: block;
+    }
+  }
+}
+.ratio_square {
+  .bg-size {
+    &:before {
+      padding-top: 100%;
+      content: "";
+      display: block;
+    }
+  }
+}
+.ratio_asos {
+  .bg-size {
+    &:before {
+      padding-top: 127.7777778%;
+      content: "";
+      display: block;
+    }
+  }
+}
+.ratio_portrait {
+  .bg-size {
+    &:before {
+      padding-top: 150%;
+      content: "";
+      display: block;
+    }
+  }
+}
+.ratio1_2 {
+  .bg-size {
+    &:before {
+      padding-top: 200%;
+      content: "";
+      display: block;
+    }
+  }
+}
+/*====== image ratio css ends ======*/
+
+body {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  .btn,
+  li,
+  td {
+    transition: 0.5s;
+  }
+  .content {
+    &.font-decrease {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span,
+      a,
+      .btn,
+      li,
+      td {
+        transition: 0.5s;
+      }
+      a,
+      span {
+        font-size: 14px;
+      }
+      .btn {
+        font-size: 13px;
+      }
+      p {
+        font-size: 13px;
+      }
+      h2 {
+        font-size: calc(20px + (28 - 20) * ((100vw - 320px) / (1920 - 320)));
+      }
+      h3 {
+        font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
+      }
+      h4 {
+        font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1920 - 320)));
+      }
+      h5 {
+        font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+      }
+      h6 {
+        font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
+      }
+      li {
+        font-size: 13px;
+      }
+      .label {
+        font-size: 11px;
+      }
+      .table {
+        td {
+          font-size: 14px;
+        }
+      }
+      .title-3 {
+        h2 {
+          span {
+            font-size: calc(20px + (28 - 20) * ((100vw - 320px) / (1920 - 320)));
+          }
+        }
+        p {
+          font-size: calc(13px + (15 - 13) * ((100vw - 320px) / (1920 - 320)));
+        }
+      }
+      .main-table-sec {
+        .table-wrapper {
+          .table-scroll {
+            table {
+              font-size: 14px;
+              tr {
+                span {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .features {
+        .f-block {
+          h6 {
+            font-size: 13px;
+          }
+        }
+      }
+      .review-sec {
+        .card-body {
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+      .getting-started-sec {
+        .alert-box {
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+      .gulp-section {
+        p {
+          font-size: 14px;
+        }
+      }
+      #treeBasic {
+        ul {
+          li {
+            font-size: 14px;
+          }
+        }
+      }
+      .right-log-content {
+        span {
+          font-size: 11px;
+        }
+        .log-btn {
+          font-size: 13px;
+        }
+      }
+      .change-log-content {
+        .change-log-date {
+          h6 {
+            font-size: 18px;
+          }
+        }
+      }
+      .p-font {
+        font-size: 15px;
+      }
+      .page-right-sidebar {
+        .nav-link {
+          font-size: 14px;
+        }
+      }
+    }
+    &.font-increase {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span,
+      a,
+      .btn,
+      li,
+      td {
+        transition: 0.5s;
+      }
+      a,
+      span {
+        font-size: 18px;
+      }
+      p {
+        font-size: 15px;
+      }
+      .btn {
+        font-size: 15px;
+      }
+      h2 {
+        font-size: calc(24px + (32 - 24) * ((100vw - 320px) / (1920 - 320)));
+      }
+      h3 {
+        font-size: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320)));
+      }
+      h4 {
+        font-size: calc(21px + (24 - 21) * ((100vw - 320px) / (1920 - 320)));
+      }
+      h5 {
+        font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
+      }
+      h6 {
+        font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+      }
+      .label {
+        font-size: 13px;
+      }
+      li {
+        font-size: 15px;
+      }
+      .table {
+        td {
+          font-size: 18px;
+        }
+      }
+      .title-3 {
+        h2 {
+          span {
+            font-size: calc(24px + (32 - 24) * ((100vw - 320px) / (1920 - 320)));
+          }
+        }
+        p {
+          font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
+        }
+      }
+      .main-table-sec {
+        .table-wrapper {
+          .table-scroll {
+            table {
+              font-size: 16px;
+              tr {
+                span {
+                  font-size: 17px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .features {
+        .f-block {
+          h6 {
+            font-size: 15px;
+          }
+        }
+      }
+      .review-sec {
+        .card-body {
+          p {
+            font-size: 18px;
+          }
+        }
+      }
+      .getting-started-sec {
+        .alert-box {
+          p {
+            font-size: 18px;
+          }
+        }
+      }
+      .gulp-section {
+        p {
+          font-size: 18px;
+        }
+      }
+      #treeBasic {
+        ul {
+          li {
+            font-size: 18px;
+          }
+        }
+      }
+      .right-log-content {
+        span {
+          font-size: 13px;
+        }
+        .log-btn {
+          font-size: 15px;
+        }
+      }
+      .change-log-content {
+        .change-log-date {
+          h6 {
+            font-size: 22px;
+          }
+        }
+      }
+      .p-font {
+        font-size: 17px;
+      }
+      .page-right-sidebar {
+        .nav-link {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+/**=====================
+     Reset css end
+==========================**/
+.list-style-1 {
+  list-style: disc;
+  padding-left: 30px;
+  li {
+    display: list-item;
+  }
+}

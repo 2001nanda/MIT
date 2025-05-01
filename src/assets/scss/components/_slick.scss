@@ -1,0 +1,32 @@
+/**=====================
+     slick css start
+==========================**/
+.slick-initialized {
+    .slick-slide {
+        margin-bottom: -4px;
+        &:focus {
+            outline: none;
+        }
+        > div {
+            &:focus {
+                outline: none;
+            }
+            > div {
+                &:focus {
+                    outline: none;
+                }
+                a {
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+    .slick-arrow {
+        z-index: 1;
+    }
+}
+/**=====================
+     slick css end
+==========================**/

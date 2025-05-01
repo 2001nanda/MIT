@@ -1,0 +1,208 @@
+/**=====================
+     labels css start
+==========================**/
+.label {
+    border-radius: 5px;
+    padding: 4px 15px 3px;
+    font-family: $font_1, $font_3;
+    font-weight: 500;
+    font-size: 12px;
+    color: $white;
+    display: inline-block;
+    text-transform: capitalize;
+    &.label-gradient {
+        &.color-1 {
+            background-image: var(--theme-gradient3);
+        }
+        &.color-4 {
+            background-image: var(--theme-gradient9);
+        }
+        &.color-6 {
+            background-image: var(--theme-gradient12);
+        }
+    }
+    &.label-solid {
+        background: var(--theme-deafult2);
+        &.color-3 {
+            background: var(--theme-deafult5);
+        }
+        &.color-6 {
+            background: var(--theme-deafult9);
+        }
+        &.color-7 {
+            background: var(--theme-deafult10);
+        }
+    }
+    &.label-success {
+        background: $success-color;
+    }
+    &.label-danger {
+        background: $danger-color;
+    }
+    &.label-shadow {
+        background-color: $danger-color;
+        box-shadow: 0 0 16px 5px rgba($danger-color, 0.2);
+    }
+    &.label-gradient {
+        &.color-4 {
+            background-image: var(--theme-gradient9);
+        }
+    }
+    &.label-light {
+        position: relative;
+        &::after {
+            @extend %common-lightafter;
+            border-radius: 8px;
+        }
+        &.color-2 {
+            color: var(--theme-deafult3);
+            &::after {
+                background-color: var(--theme-deafult3);
+                opacity: 0.1;
+            }
+        }
+        &.color-3 {
+            color: var(--theme-deafult5);
+            &::after {
+                background-color: var(--theme-deafult5);
+                opacity: 0.1;
+            }
+        }
+        &.color-4 {
+            color: var(--theme-deafult7);
+            &::after {
+                background-color: var(--theme-deafult7);
+                opacity: 0.08;
+            }
+        }
+        &.color-7 {
+            color: var(--theme-deafult10);
+            &::after {
+                background-color: var(--theme-deafult10);
+                opacity: 0.08;
+            }
+        }
+        &.label-pill {
+            &::after {
+                border-radius: 9px;
+            }
+        }
+        &.label-flat {
+            &::after {
+                border-radius: 0;
+            }
+        }
+    }
+    &.label-white {
+        background-color: $white;
+        &.color-1 {
+            color: var(--theme-deafult2);
+        }
+        .gradient-1 {
+            @extend %gradient-text1;
+            &.color-6 {
+                background: var(--theme-gradient11);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        &.color-3 {
+            color: var(--theme-deafult5);
+        }
+        &.color-6 {
+            color: var(--theme-deafult9);
+        }
+        &.color-7 {
+            color: var(--theme-deafult10);
+        }
+    }
+    &.label-dark {
+        background: $theme-font-color;
+    }
+    &.label-pill {
+        border-radius: 9px;
+    }
+    &.label-flat {
+        border-radius: 0;
+    }
+    &.label-lg {
+        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+        font-weight: 700;
+        padding: 10px 30px 9px;
+        &.label-pill {
+            border-radius: 23px;
+        }
+    }
+}
+
+.theme-label {
+    margin-bottom: -15px;
+    > div {
+        > span {
+            margin-bottom: 15px;
+            + span {
+                margin-left: 4px;
+            }
+        }
+    }
+}
+.label-heart {
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    @extend %flex-center;
+    position: relative;
+    i {
+        font-size: 14px;
+        margin: 0 0 -2px 0;
+    }
+    &::after {
+        border-radius: 100%;
+        @extend %common-lightafter;
+    }
+    &.color-7 {
+        color: var(--theme-deafult10);
+        &::after {
+            opacity: 0.1;
+            background-color: var(--theme-deafult10);
+        }
+    }
+    &.color-6 {
+        color: var(--theme-deafult9);
+        &::after {
+            opacity: 0.1;
+            background-color: var(--theme-deafult9);
+        }
+    }
+    &.color-4 {
+        color: var(--theme-deafult7);
+        &::after {
+            opacity: 0.1;
+            background-color: var(--theme-deafult7);
+        }
+    }
+    &.color-1 {
+        color: var(--theme-deafult2);
+       &::after {
+            opacity: 0.1;
+            background-color: var(--theme-deafult);
+       }
+    }
+    &.color-2 {
+        color: var(--theme-deafult3);
+        &::after {
+            opacity: 0.12;
+            background-color: var(--theme-deafult3);
+        }
+    }
+    &.color-3 {
+        color: var(--theme-deafult5);
+        &::after {
+            opacity: 0.12;
+            background-color: var(--theme-deafult5);
+        }
+    }
+}
+/**=====================
+     labels css end
+==========================**/

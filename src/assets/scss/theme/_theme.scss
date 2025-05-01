@@ -1,0 +1,207 @@
+/**=====================
+     theme css start
+==========================**/
+.title-svg {
+    fill: var(--theme-deafult5);
+    stroke: var(--theme-deafult5);
+    height: 85px;
+    margin-bottom: -85px;
+    &.color-7 {
+        fill: var(--theme-deafult10);
+        stroke: var(--theme-deafult10);
+    }
+}
+// title css
+.title-1,
+.title-2,
+.title-3 {
+    text-align: center;
+    &.text-white {
+        h2 {
+            color: $white;
+        }
+    }
+}
+.title-1 {
+    padding-bottom: 50px;
+    h2 {
+        padding-top: 15px;
+        margin-bottom: 0;
+        line-height: 31px;
+    }
+    hr{
+        width: 80px;
+        margin: 20px auto 0;
+        height: 2px;
+        color: var(--theme-deafult);
+        opacity: 1;
+        transition: all 0.5s;
+    }
+    &:hover{
+        hr{
+            width: 150px;
+            
+        }
+    }
+}
+.title-2 {
+    h2 {
+        background: var(--theme-gradient7);
+        background-blend-mode: lighten;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 16px;
+        margin-top: -3px;
+    }
+    p {
+        color: $theme-sub-font-color;
+        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+        margin-bottom: 50px;
+        font-weight: 500;
+    }
+    &.text-white {
+        h2 {
+            background: none;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+            color: $white;
+        }
+        p {
+            color: $white;
+        }
+    }
+}
+.title-3 {
+    margin-top: -15px;
+    margin-bottom: 50px;
+    h2 {
+        margin: 6px 0 12px;
+        color: $title-color;
+        span {
+            font-weight: 300;
+        }
+    }
+    p {
+        color: rgba($title-color, 0.7);
+        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+        margin-bottom: 0;
+    }
+    &.text-left {
+        margin-top: -4px;
+        h2 {
+            margin-top: 0;
+        }
+        p {
+            color: $title-color;
+        }
+    }
+}
+.inner-title {
+    margin-bottom: 30px;
+}
+// full banner css
+.light-bg {
+    background-color: rgba($white, 0.1);
+}
+.parallax-image {
+    background-attachment: fixed;
+}
+// zoom gallery css
+.gallery-wrapper {
+    .img-box {
+        .property-image {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+// tap to top css
+.tap-top {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    position: fixed;
+    bottom: -60px;
+    right: 30px;
+    z-index: 2;
+    color: $white;
+    text-align: center;
+    background-image: var(--theme-gradient7);
+    border: none;
+    font-size: 22px;
+    padding: 6px 5px 5px 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    &::after {
+        @extend %common-lightafter;
+        border-radius: 8px;
+        opacity: 0.26;
+        box-shadow: 5.353px 5.945px 12px var(--theme-deafult3);
+    }
+    &.color-1 {
+        background-image: var(--theme-gradient3);
+        &::after {
+            box-shadow: 5.353px 5.945px 12px var(--theme-deafult2);
+        }
+    }
+    &.color-3 {
+        background: var(--theme-deafult5);
+        &::after {
+            box-shadow: 5.353px 5.945px 12px var(--theme-deafult5);
+        }
+    }
+    &.color-4 {
+        background: var(--theme-gradient9);
+        &::after {
+            box-shadow: 5.353px 5.945px 12px var(--theme-deafult6);
+        }
+    }
+    &.color-6 {
+        background: var(--theme-gradient12);
+        &::after {
+            box-shadow: 5.353px 5.945px 12px var(--theme-deafult9);
+        }
+    }
+    &.color-7 {
+        background: var(--theme-deafult10);
+        &::after {
+            box-shadow: 5.353px 5.945px 12px var(--theme-deafult10);
+        }
+    }
+    > div {
+        @extend %flex-center;
+        height: 100%;
+        i {
+            font-size: 14px;
+        }
+    }
+    &.top {
+        display: block;
+        bottom: 50px;
+        transition: all 0.5s ease;
+    }
+}
+// home section css
+.setting-icon {
+    > div {
+        @extend %flex-center;
+        width: 45px;
+        height: 45px;
+        border-radius: 5px 0 0 5px;
+        background-image: var(--theme-gradient3);
+    }
+    i {
+        color: $white;
+        font-size: 18px;
+        cursor: pointer;
+    }
+}
+.parallax-home {
+    .light-bg-3 {
+        background-image: url(../images/parallax/7.jpg);
+    }
+}
+/**=====================
+     theme css end
+==========================**/

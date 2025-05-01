@@ -1,0 +1,577 @@
+/**=====================
+     Document Responsive css start
+==========================**/
+@media (max-width: 1873px) {
+    .property-doc {
+        .property-section {
+            .row {
+                &.property-4 {
+                    > div {
+                        flex: 0 0 45%;
+                        max-width: 45%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1750px) {
+    .about-doc {
+        .about-1 {
+            flex: 0 0 90%;
+            max-width: 90%;
+        }
+        .about-2 {
+            flex: 0 0 60%;
+            max-width: 60%;
+        }
+    }
+    .property-doc {
+        .property-section {
+            .row {
+                &.property-4 {
+                    > div {
+                        flex: 0 0 52%;
+                        max-width: 52%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1660px) {
+    .about-doc {
+        .about-3 {
+            flex: 0 0 45%;
+            max-width: 45%;
+        }
+    }
+    .property-doc {
+        .property-section {
+            .row {
+                &.property-4 {
+                    > div {
+                        flex: 0 0 55%;
+                        max-width: 55%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1575px) {
+    .property-doc {
+        .property-section {
+            .row {
+                > div {
+                    flex: 0 0 70%;
+                    max-width: 70%;
+                }
+                &.property-4 {
+                    > div {
+                        flex: 0 0 60%;
+                        max-width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1573px) {
+    .about-doc {
+        .about-3 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+}
+@media (max-width: 1535px) {
+    .property-doc {
+        .property-section {
+            .row {
+                &.property-4 {
+                    > div {
+                        flex: 0 0 65%;
+                        max-width: 65%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1496px) {
+    .about-doc {
+        .about-3 {
+            flex: 0 0 55%;
+            max-width: 55%;
+        }
+    }
+}
+@media (max-width: 1440px) {
+    .custom-scrollbar {
+        &.page-sidebar {
+            width: 220px;
+        }
+    }
+    .left-sidebar {
+        width: 260px;
+    }
+    .content {
+        margin-left: 300px;
+        margin-right: 240px;
+    }
+    .right-sidebar {
+        width: 200px;
+    }
+    .about-doc {
+        .about-3 {
+            flex: 0 0 45%;
+            max-width: 45%;
+        }
+    }
+    .property-doc {
+        .property-section {
+            .row {
+                &.property-4 {
+                    > div {
+                        flex: 0 0 50%;
+                        max-width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1366px) {
+    .about-doc {
+        .about-3 {
+            flex: 0 0 60%;
+            max-width: 60%;
+        }
+    }
+    .service-doc {
+        .service-section {
+            &.service-1, &.service-2 {
+                .row {
+                    > div {
+                        flex: 0 0 60%;
+                        max-width: 60%;
+                    }
+                }
+            }
+        }
+    }
+    .property-doc {
+        .property-section {
+            .row {
+                &.property-4 {
+                    > div {
+                        flex: 0 0 60%;
+                        max-width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .menu {
+        > .nav-item {
+            > .nav-link {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        .nav-item {
+            + .nav-item {
+                margin-left: 20px;
+            }
+        }
+    }
+    .navbar {
+        .btn-dark {
+            padding-left: 10px;
+            padding-right: 10px;
+            i {
+                margin-right: 0;
+            }
+            span {
+                display: none;
+            }
+        }
+    }
+    .page-footer {
+        .page-changes-summary {
+            .contributors {
+                .page-rating {
+                    .page-rating-icons {
+                        span {
+                            width: 22px;
+                            height: 22px;
+                            margin: 0 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .content .right-column {
+        order: -1;
+    }
+    .component-doc {
+        .content {
+            margin-right: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    .page-right-sidebar {
+        margin-bottom: 20px;
+    }
+    .custom-scrollbar {
+        &.page-sidebar {
+            position: relative;
+            top: unset;
+            right: unset;
+            width: auto;
+            padding-top: 0;
+        }
+    }
+    .about-doc {
+        .about-1 {
+            flex: 0 0 60%;
+            max-width: 60%;
+        }
+        .about-3 {
+            flex: 0 0 52%;
+            max-width: 52%;
+        }
+    }
+    .property-doc {
+        .property-section {
+            .row {
+                &.property-4 {
+                    > div {
+                        flex: 0 0 70%;
+                        max-width: 70%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .navbar {
+        padding: 15px;
+        .nav-right {
+            justify-content: flex-end;
+            align-items: center;
+            .toggle-sidebar {
+                color: $theme-font-color;
+            }
+        }
+        .navbar-brand {
+            img {
+                width: 150px;
+            }
+        }
+        .navbar-collapse {
+            position: absolute;
+            overflow: auto;
+            max-height: unset;
+            min-width: 300px;
+        }
+    }
+    .menu {
+        > .nav-item {
+            > .nav-link {
+                padding: 6px;
+            }
+        }
+        .nav-item {
+            + .nav-item {
+                margin-left: 0;
+            }
+        }
+    }
+    .left-sidebar {
+        padding: 20px;
+        box-shadow: $card-box-shadow;
+        top: 60px !important;
+        height: calc(100vh - 60px);
+        &.open {
+            left: 0;
+        }
+    }
+    .direct {
+        .nav-link {
+            padding: 15px;
+        }
+    }
+    .content {
+        margin-left: 20px;
+    }
+    .feature-doc {
+        .content {
+            margin: 0;
+        }
+    }
+    .portfolio-section {
+        margin-bottom: -20px;
+        .grid-item  {
+            margin-bottom: 20px;
+        }
+    }
+    .new-arrival-sec {
+        &.card  {
+            .card-body {
+                .arrival-content-main {
+                    padding: 20px;
+                }
+            }
+        }
+    }
+    .about-doc {
+        .about-3 {
+            flex: 0 0 47%;
+            max-width: 47%;
+        }
+    }
+    .property-doc {
+        .property-section {
+            .row {
+                &.property-box-flat {
+                    > div {
+                        flex: 0 0 75%;
+                        max-width: 75%;
+                    }
+                }
+                &.property-4 {
+                    > div {
+                        flex: 0 0 80%;
+                        max-width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .right-sidebar {
+        position: relative;
+        padding-left: 20px;
+        top: unset;
+        padding-top: 0;
+    }
+    .content {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .component-doc {
+        .tab-spacing {
+            padding-right: 0;
+            width: 100%;
+        }
+    }
+    .document-main {
+        margin: 0;
+        &.feature-doc {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+    }
+    .features {
+        .f-block {
+          &:nth-child(3n+3) {
+            border-right: none;
+          }
+          &:nth-last-child(-n+6) {
+              border-bottom: 1px solid #ddd;
+          }
+          &:nth-last-child(-n+3) {
+              border-bottom: none;
+          }
+        }
+      
+    }
+    .about-doc {
+        .about-3 {
+            flex: 0 0 78%;
+            max-width: 78%;
+        }
+    }
+    .property-doc {
+        .property-section {
+            .row {
+                &.property-box-flat {
+                    > div {
+                        flex: 0 0 85%;
+                        max-width: 85%;
+                    }
+                }
+                &.property-4 {
+                    > div {
+                        flex: 0 0 88%;
+                        max-width: 88%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 575px) {
+    .navbar {
+        .row {
+            > div {
+                &:first-child {
+                    padding-left: 0;
+                }
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+        .container-fluid {
+            padding: 0;
+            .row {
+                margin: 0;
+            }
+        }
+        .nav-right {
+            .btn {
+                padding: 6px 8px;
+            }
+            .btn-dark {
+                padding: 8px;
+            }
+            li {
+                + li {
+                    margin-left: 8px;
+                }
+            }
+        }
+        .navbar-brand {
+            img {
+                width: 100px;
+            }
+        }
+        .navbar-collapse {
+            min-width: 180px;
+        }
+    }
+    .features {
+        .f-block {
+            border-right: none;
+            &:nth-last-child(-n+3) {
+                border-bottom: 1px solid #ddd;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+    .getting-started-sec {
+        .alert-box {
+            padding: 20px;
+        }
+    }
+    .tab-spacing {
+        .nav-link {
+            padding-left: 13px;
+            padding-right: 12px;
+        }
+    }
+    .about-doc {
+        .about-box {
+            .agent-image {
+                .overlay-agent {
+                    .agent-details {
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+        .about-1, .about-2, .about-3 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+    .service-doc {
+        .service-section {
+            &.service-1, &.service-2 {
+                .row {
+                    > div {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .property-doc {
+        .property-section {
+            .row {
+                > div {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+                &.property-box-flat {
+                    > div {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                    }
+                }
+                &.property-4 {
+                    > div {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 480px) {
+    .navbar {
+        .row {
+            > div {
+                &:last-child {
+                    
+                }
+            }
+        }
+    }
+}
+@media (max-width: 420px) {
+    .navbar {
+        .navbar-brand {
+            img {
+                width: 80px;
+            }
+        }
+        .nav-right {
+            .btn {
+                padding: 6px;
+                font-size: 12px;
+            }
+            .btn-doc {
+                min-width: unset;
+            }
+        }
+        .row {
+            > div {
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    .navbar-toggler {
+        i {
+            font-size: 16px;
+        }
+    }
+}
+/**=====================
+     Document Responsive css end
+==========================**/

@@ -1,0 +1,279 @@
+.seat-layout-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.container-test {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 6px;
+}
+
+.custom-dropdown {
+  margin-bottom: 10px;
+}
+.custom-dropdown .dropdown-menu {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box;
+}
+
+
+.custom-btn {
+  background-color: rgb(12, 97, 142);
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: left;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.custom-btn:hover,
+.custom-btn:focus,
+.custom-btn:active,
+.custom-btn.show {
+  background-color: rgb(12, 97, 142);
+  color: white;
+}
+
+.section-divider {
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.info-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.info-subtext {
+  font-size: 12px;
+  color: #666;
+  margin: 0.25rem 0;
+}
+
+.info-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1e40af;
+}
+
+.continue-btn {
+  width: 100%;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.disabled-btn {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.active-btn {
+  background:rgb(12, 97, 142);
+  transition: background 0.3s ease-in-out, transform 0.2s ease;
+  color: white;
+  cursor: pointer;
+}
+
+.active-btn:hover {
+  background: white;
+  transform: scale(1.02);
+  color: black;
+  border: 1px solid rgb(12, 97, 142);
+}
+
+.leftsidewidth {
+  flex: 1;
+  min-width: 0;
+}
+
+.right-box {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.seatlayoutborderbox {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  width: fit-content;
+}
+
+.upper-deck {
+  margin-bottom: 30px;
+}
+
+.seats-container {
+  display: grid;
+  gap: 10px;
+}
+
+.seat-layout {
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.legend-item span {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.available {
+  background-color: #E5E7EB;
+  border: 2px solid #9CA3AF;
+}
+
+.booked {
+  background-color: #D1FAE5;
+  border: 2px solid #065F46;
+}
+
+.male {
+  background-color: #DBEAFE;
+  border: 2px solid #1E40AF;
+}
+
+.female {
+  background-color: #e41f8f;
+  border: 2px solid #BE185D;
+}
+
+.femaleavailable {
+  background-color: #c78bad;
+  border: 2px solid #ff006a;
+}
+
+.selected {
+  background-color: #DBEAFE;
+  border: 2px solid #1D4ED8;
+}
+
+.blocked {
+  background-color: #FECACA;
+  border: 2px solid #B91C1C;
+}
+
+.seat {
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.upper-deck .seat {
+  width: 60px;
+}
+
+.seat:hover {
+  transform: scale(1.1);
+}
+
+.seat.BFA,
+.seat.BFF,
+.seat.blocked {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.seat.BFA:hover,
+.seat.BFF:hover,
+.seat.blocked:hover {
+  background-color: inherit;
+  border-color: inherit;
+}
+
+/* 🔴 Red Dot for fare filter highlight */
+.red-dot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+/* 🎟️ Fare Filter Button Styles */
+.fare-filter {
+  display: flex;
+  gap: 8px;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.fare-btn {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.fare-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.fare-btn.active {
+  background-color: rgb(12, 97, 142);
+  color: white;
+  border-color: #1d4ed8;
+}
+
+
+.error-border {
+  border: 2px solid red;
+  border-radius: 8px;
+}

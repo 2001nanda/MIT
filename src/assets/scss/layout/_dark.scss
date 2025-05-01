@@ -1,0 +1,681 @@
+/**=====================
+     dark layout css start
+==========================**/
+body {
+    transition: 0.5s;
+    &.dark-layout {
+        transition: 0.5s;
+        background-color: $dark-bg;
+        color: rgba($white, 0.85);
+        h2, h3 {
+            color: $white;
+        }
+        #treeBasic {
+            ul {
+                li {
+                    color: rgba($white, 0.85); 
+                }
+            }
+        }
+        .features {
+            background-color: $dark-bg3;
+            border-color: $dark-border-color;
+            .f-block {
+                border-right-color: $dark-border-color;
+                border-bottom-color: $dark-border-color;
+                img {
+                    filter: brightness(0.5) invert(0.2);
+                }
+            }
+        }
+        .dropdown {
+            .dropdown-menu {
+                background-color: $dark-bg2;
+                border-color: $dark-border-color;
+                .dropdown-item {
+                    &:active, .active {
+                        background-color: $dark-bg;
+                        color: rgba($white, 0.7);
+                    }
+                }
+            }
+            .dropdown-toggle {
+                i {
+                    color: rgba($white, 0.8);
+                }
+            }
+        }
+        .dropdown-item {
+            color: rgba($white, 0.5);
+            &:hover,  &:focus {
+                background-color: $dark-bg;
+            }
+        }
+        .bg-light {
+            background-color: $dark-color !important;
+        }
+        .shadow-cls {
+            box-shadow: 3.346px 3.716px 22.5px $dark-border-color;
+        }
+        // single property page css
+        .nav-tabs {
+            border-bottom: 1px solid $dark-border-color;
+            .nav-link.active, .nav-item.show .nav-link {
+                background-color: transparent;
+            }
+        }
+        // form css
+        form {
+            label {
+                color: rgba($white, 0.8);
+            }
+        }
+        .form-control {
+            background-color: $dark-bg2;
+            border-color: $dark-border-color;
+            color: rgba($white, 0.8);
+            &::placeholder {
+                color: rgba($white, 0.4);
+            }
+        }
+        .checkbox_animated {
+            &:after {
+                background: $dark-bg;
+                border: 2px solid $dark-border-color;
+            }
+        }
+        // buttons css
+        .btn {
+            &.btn-dashed  {
+                color: rgba($white, 0.8);
+                border-color: $dark-border-color;
+            }
+            &.btn-light-bg {
+                &:hover {
+                    background: $dark-bg;
+                }
+            }
+            &.btn-solid{
+                &:hover  {
+                    background: $dark-bg;
+                }
+            }
+            &.btn-white {
+                background: $dark-bg;
+                &:hover {
+                    box-shadow: 0 4px 6px 2px $dark-border-color;
+                }
+            }
+        }
+        // title css
+        .title-2 {
+            p {
+                color: rgba($white, 0.8);
+            }
+        }
+        .title-3 {
+            p {
+                color: rgba($white, 0.6);
+            }
+        }
+        // pagination css
+        .page-link {
+            background-color: $dark-bg;
+            border: 1px solid $dark-border-color;
+        }
+        // header css
+        .input-group-text {
+            border: 1px solid $dark-border-color;
+        }
+        // sidebar & filter css
+        .left-sidebar {
+            .dropdown {
+                border-color: $dark-border-color;
+            }
+        }
+        .left-sidebar, .blog-sidebar {
+            background: $dark-bg2;
+        }
+        .blog-sidebar {
+            .search-bar {
+                input {
+                    background-color: $dark-bg;
+                    color: rgba($white, 0.8);
+                }
+            }
+        }
+        // property css
+        .property-section {
+            .property-box {
+                background-color: $dark-bg2;
+                .property-details {
+                    .icon-property {
+                        li {
+                            + li {
+                                &::before {
+                                    background-color: $dark-border-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .property-2 {
+                .property-box {
+                    .property-details {
+                        > a {
+                            background: linear-gradient(to right, #ffffff 0%, #ffffff 100%);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                        }
+                    }
+                    &:hover {
+                        .property-details {
+                            > a {
+                                background: var(--theme-gradient6);
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+            .property-box-flat {
+                .property-box {
+                    .property-details {
+                        p {
+                            color: rgba($white, 0.6);
+                        }
+                    }
+                }
+            }
+            .list-property {
+                .property-box {
+                    .property-image {
+                        .overlay-property {
+                            .overlay-box {
+                                background-color: $dark-bg2;
+                                h4 {
+                                    color: $white;
+                                }
+                                p {
+                                    color: rgba($white, 0.6);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .property-details {
+            > a {
+                color: $white;
+            }
+            ul {
+                li {
+                    + li {
+                        border-left: 1px solid $dark-border-color;
+                    }
+                }
+            }
+        }
+        // user dashboard css
+        .apexcharts-canvas {
+            text {
+                fill: rgba($white, 0.7);
+            }
+        }
+        .apexcharts-tooltip {
+            &.light {
+                border: 1px solid $dark-border-color;
+                background: $dark-bg;
+                .apexcharts-tooltip-title {
+                    background: $dark-bg2;
+                    border-bottom: 1px solid $dark-border-color;
+                }
+            }
+        }
+        #overviewchart {
+            svg {
+                linearGradient {
+                    stop[stop-opacity="0.4"] {
+                        stop-color:$dark-bg2;
+                    }
+                }
+            }
+        }
+        .modal-header {
+            border-bottom: 1px solid $dark-border-color;
+        }
+        .modal-footer {
+            border-top: 1px solid $dark-border-color;
+        }
+        .gj-picker-bootstrap {
+            color: $theme-font-color;
+        }
+        .gj-datepicker-bootstrap {
+            [role=right-icon] {
+                button {
+                    border: 1px solid $dark-border-color;
+                }
+            }
+        }
+        // service section css
+        .service-section {
+            .property-service {
+                > div {
+                    .service-box {
+                        background-color: $dark-bg2;
+                        box-shadow: none;
+                        p {
+                            color: rgba($white, 0.7);
+                        }
+                    }
+                }
+            }
+            &.service-2 {
+                .property-service {
+                    > div {
+                        .service-box {
+                            h3 {
+                                color: rgba($white, 0.9);
+                            }
+                        }
+                    }
+                }
+            }
+            &.service-bg {
+                &::after {
+                    background-color: $dark-bg2;
+                }
+            }
+        }
+        .service-slider {
+            .service-wrapper {
+                .service-details {
+                    background-color: $dark-bg;
+                    box-shadow: $dark-bg3 0px 0px 35px;
+                    h3 {
+                        color: $white;
+                        a {
+                            color: rgba($white, 0.9);
+                        }
+                    }
+                    p {
+                        color: rgba($white, 0.6);
+                    }
+                }
+            }
+        }
+        // about section css
+        .about-section {
+            .about-wrap {
+                .about-content {
+                    .our-details {
+                        background-color: $dark-bg2;
+                    }
+                }
+                &.about-2 {
+                    .about-content {
+                        .our-details {
+                            p {
+                                color: rgba($white, 0.6);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .about-box {
+            .agent-image {
+                .overlay-agent {
+                    .agent-details {
+                        background-color: $dark-bg;
+                        h5 {
+                            color: $white;
+                        }
+                        p {
+                            color: rgba($white, 0.7);
+                        }
+                        > span {
+                            color: rgba($white, 0.9);
+                        }
+                        ul {
+                            li {
+                                a {
+                                    box-shadow: 0 0 20px 0 $dark-border-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // about us css
+        .effect-cls {
+            &:after {
+                filter: brightness(0.9) invert(1);
+            }
+        }
+        // blog css
+        .blog-1 {
+            .blog-box {
+                .blog-content {
+                    background-color: $dark-bg2;
+                    span {
+                        color: rgba($white, 0.8);
+                    }
+                    p {
+                        color: rgba($white, 0.7);
+                    }
+                }
+            }
+        }
+        .blog-wrap {
+            box-shadow: 0px 10px 30px $dark-bg2;
+            background-color: lighten($dark-bg2, 2%);
+            .blog-details {
+                span, h5, a {
+                    color: rgba($white, 0.7);
+                }
+                p {
+                    color: rgba($white, 0.5);
+                }
+            }
+            &:hover {
+                .blog-details {
+                    a {
+                        color: var(--theme-deafult5);
+                    }
+                }
+            }
+        }
+        // brand section css
+        .bg-light-blue {
+            background-color: $dark-bg2;
+        }
+        // faq css
+        .card {
+            background-color: $dark-bg;
+            box-shadow: 3.346px 3.716px 22.5px $dark-border-color;
+        }
+        .card-header {
+            background-color: $dark-bg2;
+        }
+        .accordion {
+            .card-header {
+                .card-link {
+                    color: rgba($white, 0.8);
+                    &::after {
+                        color: rgba($white, 0.8);
+                    }
+                }
+            }
+            .card-body {
+                border-top: 1px solid $dark-border-color;
+            }
+        }
+        // footer css
+        footer {
+            &.footer-dark {
+                background: $dark-bg2;
+            }
+            .sub-footer {
+                &.sub-footer-dark {
+                    background-color: $dark-bg;
+                }
+            }
+            &.footer-light {
+                .footer-details {
+                    .footer-contact {
+                        ul {
+                            li {
+                                color: $white;
+                            }
+                        }
+                    }
+                    p {
+                        color: rgba($white, 0.6);
+                    }
+                }
+                .footer-content {
+                    > img {
+                        filter: brightness(0.8) invert(0.2);
+                    }
+                }
+                .footer-links {
+                    h5 {
+                        color: $white;
+                    }
+                    .footer-content {
+                        li {
+                            a {
+                                color: rgba($white, 0.6);
+                            }
+                        }
+                    }
+                }
+                .sub-footer {
+                    &.sub-footer-dark {
+                        background-color: $dark-bg2;
+                    }
+                }
+            }
+        }
+        // responsive css
+        @media (max-width: 991px) {
+            // document css
+            .navbar-collapse {
+                background-color: $dark-bg3;
+            }
+            .menu .nav-item, .navbar_fixed.menu_one .menu .nav-item {
+                border-bottom-color: $dark-border-color;
+            }
+            .navbar {
+                .nav-right {
+                    .toggle-sidebar {
+                        color: rgba($white, 0.8);
+                    }
+                }
+            }
+            .document-main {
+                .left-sidebar {
+                    background-color: $brown-color !important;
+                }
+            }
+        }
+        // document css
+        .change-log-content {
+            .log-version-info {
+                .log-line {
+                    background: $dark-border-color;
+                }
+            }
+        }
+        .navbar {
+            background: $brown-color;
+            border-bottom: 1px solid $dark-border-color;
+            .collapse {
+                border-right-color: $dark-border-color;
+            }
+        }
+        .nav-sidebar {
+            > .nav-item {
+                .title {
+                    background-color: $dark-bg3;
+                    color: rgba($white, 0.8);
+                }
+            }
+        }
+        .nav-link {
+            color: rgba($white, 0.8);
+            &.active {
+                color: var(--theme-deafult7);
+            }
+        }
+        .quick-links {
+            h5 {
+                background-color: $dark-bg3;
+            }
+        }
+        .direct {
+            .nav-link {
+                background-color: $dark-bg3;
+                color: rgba($white, 0.8);
+            }
+        }
+        .parent-title {
+            background-color: $dark-bg3;
+            color: rgba($white, 0.8);
+        }
+        .menu {
+            > .nav-item {
+                > .nav-link {
+                    color: rgba($white, 0.8);
+                }
+                &.active, &:hover {
+                    .nav-link {
+                        color: var(--theme-deafult7);
+                    }
+                }
+            }
+        }
+        .main-title {
+            color:rgba($white, 0.95);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: rgba($white, 0.9);
+        }
+        .document-main {
+            .left-sidebar {
+                background-color: transparent;
+            }
+            .card {
+                background-color: $brown-color;
+                box-shadow: rgba($dark-bg2, 0.05) 0px 0px 37px;
+            }
+            .table {
+                color: rgba($white, 0.8);
+                th, td {
+                    border-bottom-color: $dark-border-color;
+                }
+            }
+            .nav-tabs {
+                .nav-link.active, .nav-item.show .nav-link {
+                    color: rgba($white, 0.9);
+                    border-color: $dark-border-color $dark-border-color $dark-bg2;
+                }
+                .nav-link {
+                    &:hover, &:focus {
+                        border-color: $dark-border-color $dark-border-color $dark-bg2;
+                    }
+                }
+            }
+            pre[class*=language-] {
+                background: $dark-bg;
+                border-color: $dark-border-color;
+            }
+            code[class*=language-] {
+                text-shadow: 0 1px $dark-bg2;
+                color: rgba($white, 0.8);
+            }
+            .code-box-copy__btn {
+                background-color: $dark-bg2;
+                color: rgba($white, 0.8);
+                border-color: $dark-border-color;
+                &:hover {
+                    background-color: $dark-bg;
+                }
+            }
+            .language-css, .style {
+                .token {
+                    &.string {
+                        background-color: rgba($dark-bg,0.5);
+                    }
+                }
+            }
+            .token {
+                &.entity, &.operator, &.url {
+                    background: rgba($dark-bg,0.5);
+                }
+            }
+            .infoBox {
+                .marker-detail, h6 {
+                    color: $theme-font-color;
+                }
+            }
+        }
+        .component-doc {
+            .blog-1 {
+                .blog-box {
+                    background-color: $dark-bg;
+                    .blog-content {
+                        background-color: $dark-bg;
+                    }
+                }
+            }
+            .about-section {
+                .about-wrap {
+                    .about-content {
+                        .our-details {
+                            background-color: $dark-bg;
+                        }
+                    }
+                }
+            }
+            .service-section {
+                .property-service {
+                    > div {
+                        .service-box {
+                            background-color: $dark-bg;
+                        }
+                    }
+                }
+            }
+            .property-section {
+                .property-box {
+                    background-color: $dark-bg;
+                }
+            }
+        }
+        .main-table-sec {
+            .table-wrapper {
+                .table-scroll {
+                    table {
+                        tr {
+                            &:first-child {
+                                border-bottom-color: $dark-border-color;
+                                span {
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .page-footer {
+            .page-changes-summary {
+                border-top-color: $dark-border-color;
+            }
+        }
+        .page-right-sidebar {
+            .nav {
+                li {
+                    p {
+                        color: rgba($white, 0.9);
+                        background: $brown-color;
+                    }
+                }
+            }
+        }
+        .navbar-toggler {
+            i {
+                color: rgba($white, 0.8);
+            }
+        }
+    }
+}
+/**=====================
+     dark layout css end
+==========================**/
