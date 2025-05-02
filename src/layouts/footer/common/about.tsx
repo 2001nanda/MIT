@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const AboutComponent: React.FC = () => {
   return (
-    <div className="col-xl-2 col-md-3">
+    <div className="col-xl-2 col-md-3" style={{width:"25%" , marginTop: "20px"}}>
       <div className="footer-space">
         <div className="footer-title">
           <h5>{About}</h5>
@@ -12,9 +12,9 @@ const AboutComponent: React.FC = () => {
           <div className="footer-links">
             <ul>
               <li>
-                <Link href="/pages/other-pages/about-us-1">about us</Link>
+                <Link href="/pages/other-pages/about-us-1">About Us</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/pages/other-pages/faq">FAQ</Link>
               </li>
               <li>
@@ -22,15 +22,15 @@ const AboutComponent: React.FC = () => {
               </li>
               <li>
                 <Link href="/pages/other-pages/register">register</Link>
-              </li>
+              </li> */}
               <li>
-                <Link href="/pages/other-pages/user-dashboard">terms & co.</Link>
+                <Link href="/pages/other-pages/user-dashboard">Terms of Conditions</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/pages/other-pages/user-dashboard">privacy</Link>
-              </li>
+              </li> */}
               <li>
-                <Link href="https://support.pixelstrap.com/">support</Link>
+                <Link href="https://support.pixelstrap.com/">Support</Link>
               </li>
             </ul>
           </div>
