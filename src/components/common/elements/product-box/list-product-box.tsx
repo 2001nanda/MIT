@@ -14,6 +14,7 @@ const ListPage: FC<IListProductBoxProps> = ({ data }) => {
 
   const fetchSeatLayout = async () => {
     try {
+      setLoadingSeats(true); // Start loader
       const response = await fetch("https://localhost:44370/api/My/seatlayout", {
         method: "POST",
         headers: {
@@ -36,6 +37,8 @@ const ListPage: FC<IListProductBoxProps> = ({ data }) => {
       setShowSeats(true);
     } catch (error) {
       console.error("Error fetching seats:", error);
+    } finally {
+      setLoadingSeats(false); // Stop loader
     }
   };
   const BusIcon = BsBusFront as unknown as FC<{ size?: string | number; color?: string }>;
@@ -415,6 +418,11 @@ const FlagIcon = BsFlag as unknown as FC<{ size?: string | number; color?: strin
 </div>
 )}
 
+{loadingSeats && activeSection === "viewSeat" && (
+  <div style={{ textAlign: "center", padding: "20px" }}>
+    <span>Loading seat layout...</span>
+  </div>
+)}
 
 {showSeats && seatsData && activeSection === "viewSeat" && (
   <div className="seats-layout">

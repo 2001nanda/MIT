@@ -8,7 +8,7 @@ import steeringIcon from "@/public/assets/images/steeringIcon.png";
 import Dropdown from "react-bootstrap/Dropdown";
 import "./SeatLayout.css";
 import { useRouter } from "next/navigation";
-
+import { useRef } from "react"; // Already imported
 interface SeatLayoutProps {
   seats: Seat[];
   route: Route;
@@ -19,6 +19,9 @@ interface SeatLayoutProps {
 
 const SeatLayout: FC<SeatLayoutProps> = ({ seats ,route  ,baseItem,formatDuration}) => {
   const router = useRouter();
+  const droppingRef = useRef<HTMLDivElement | null>(null);
+  const droppingToggleRef = useRef<HTMLButtonElement | null>(null);
+  
 
   const formatSubLocationTime = (isoTime: string, isNextDay: boolean) => {
     const date = new Date(isoTime);
@@ -26,7 +29,6 @@ const SeatLayout: FC<SeatLayoutProps> = ({ seats ,route  ,baseItem,formatDuratio
     const minutes = date.getMinutes().toString().padStart(2, '0');
     const day = date.getDate().toString().padStart(2, '0');
     const month = date.toLocaleString('default', { month: 'short' }); // 'Apr', etc.
-  
     return {
       time: `${hours}:${minutes}`,
       date: isNextDay ? `(${day} ${month})` : null,
@@ -347,8 +349,19 @@ window.open("/bus/booking/booking-page", "_blank");
       {filteredBoardingPoints.map((point, idx) => (
   <Dropdown.Item
     key={idx}
-    onClick={() => setSelectedBoardingPoint(`${point.time} ${point.date ? point.date + " " : ""}${point.name}`)}
-    style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+    onClick={() => {
+      setSelectedBoardingPoint(`${point.time} ${point.date ? point.date + " " : ""}${point.name}`);
+      setTimeout(() => {
+        // Scroll to dropping point
+        droppingRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    
+        // Simulate click to open the dropdown
+        droppingToggleRef.current?.click();
+      }, 150);
+    }}
+    
+    
+        style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
   >
     <span style={{ fontWeight: 'bold', color: '#000', margin: "5px" }}>{point.time}</span>
     {point.date && (
@@ -367,10 +380,12 @@ window.open("/bus/booking/booking-page", "_blank");
 )}
 
 
-<div className="label" style={{ marginTop: "1rem" }}>Choose Dropping Point</div>
+<div ref={droppingRef} className="label" style={{ marginTop: "1rem" }}>Choose Dropping Point</div>
 <div className={`custom-dropdown ${droppingError ? "error-border" : ""}`}>
   <Dropdown>
-    <Dropdown.Toggle className="custom-btn">{selectedDroppingPoint}</Dropdown.Toggle>
+  <Dropdown.Toggle ref={droppingToggleRef} className="custom-btn">
+  {selectedDroppingPoint}
+</Dropdown.Toggle>
     <Dropdown.Menu style={{ maxHeight: "250px", overflowY: "auto" }}>
       <div style={{ padding: "0.5rem" }}>
         <input
