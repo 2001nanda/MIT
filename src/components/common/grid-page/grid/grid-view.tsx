@@ -36,6 +36,7 @@ const GridView: FC<IGridViewProps> = ({
   latestFilter,
 }) => {
   const dispatch = useDispatch();
+  const { loading } = useSelector((state: RootState) => state.tour);
   const grid = useSelector((state: RootState) => state.gridReducer);
 
   const [filteredMenu, setFilteredMenu] = useState<
@@ -173,6 +174,7 @@ const GridView: FC<IGridViewProps> = ({
               type={type}
               view={view}
               trip={trip}
+              loading={loading}
             />
           </div>
         </div>

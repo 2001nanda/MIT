@@ -18,6 +18,7 @@ export interface IGridLayoutProps {
   type?: string;
   view?: string;
   trip?: string;
+  loading?: "idle" | "pending" | "succeeded" | "failed";
 }
 
 export interface IGridListProps {

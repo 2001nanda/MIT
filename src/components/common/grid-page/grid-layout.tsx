@@ -16,7 +16,7 @@ import RestaurantProducts from "../elements/product-box-6/restaurant-product";
 import useFilterRestaurant from "@/utils/filters/useFilterRestaurant";
 import { IGridLayoutProps } from "./grid-page.d";
 
-const GridLayout: FC<IGridLayoutProps> = ({ value, grid, type, view, trip }) => {
+const GridLayout: FC<IGridLayoutProps> = ({ value, grid, type, view, trip , loading }) => {
   const cardToShow = 6;
   const dispatch = useDispatch();
 
@@ -25,17 +25,26 @@ const GridLayout: FC<IGridLayoutProps> = ({ value, grid, type, view, trip }) => 
 
 
   useEffect(() => {
-    console.log("GridLayout Props:");
-    console.log("showProduct:", showProduct);
-    console.log("grid1:", grid);
-    console.log("type1:", type);
-    console.log("view:1", view);
-    console.log("trip1:", trip);
-  }, [value, grid, type, view, trip]); // re-log if any prop changes
-
-  useEffect(() => {
     dispatch({ type: "productCount", payload: showProduct?.length });
   }, [dispatch, showProduct]);
+
+  if (loading === "pending" || loading === "idle") {
+    return (
+      <div className="text-center py-5">
+        <div className="spinner-border text-primary" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (loading === "failed") {
+    return (
+      <div className="text-center py-5">
+        <h4>Failed to load data. Please try again.</h4>
+      </div>
+    );
+  }
 
   return (
     <>
