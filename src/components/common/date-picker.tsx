@@ -3,23 +3,23 @@ import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 interface IDatePickerProps {
-  setStart: Function;
+  setStart: (date: Date) => void;
   start: Date;
-  isDark?: boolean; // ✅ make it optional
+  isDark?: boolean;
 }
 
 const datePickerStyles = {
   lightInput: {
     color: "black",
-    // fontWeight: "normal",
   },
   darkInput: {
-    color: "black", // darker
-    // fontWeight: "bold",
+    color: "black",
   },
 };
 
 const DatePickerComponent: FC<IDatePickerProps> = ({ setStart, start, isDark = false }) => {
+  const today = new Date();
+
   return (
     <ReactDatePicker
       selected={start}
@@ -27,7 +27,12 @@ const DatePickerComponent: FC<IDatePickerProps> = ({ setStart, start, isDark = f
       id="datepicker"
       dateFormat="dd MMMM"
       className="datepicker-main"
-      customInput={<input style={isDark ? datePickerStyles.darkInput : datePickerStyles.lightInput} />}
+      minDate={today} // ✅ Prevent past dates
+      customInput={
+        <input
+          style={isDark ? datePickerStyles.darkInput : datePickerStyles.lightInput}
+        />
+      }
     />
   );
 };

@@ -3,17 +3,17 @@ import axios from "axios";
 import { RootState } from "./store";
 import { ITravelProps } from "@/components/tour/listing/travel";
 
-// export const getTourData = createAsyncThunk<ITravelProps[], void, {}>("api/tour", async () => {
-//   const response = await axios.get("/api/tour");
-//   return response.data;
-// });
-
-
+// Async thunk to fetch tour data
 export const getTourData = createAsyncThunk<ITravelProps[], { from: string; to: string; date: string }>(
-  "api/tour",
+  "tour/getTourData",
   async ({ from, to, date }) => {
     const response = await axios.get("https://localhost:44370/api/My/searchtbus", {
-      params: { from, to, date },
+      params: { from, to, date, _t: new Date().getTime() }, // cache buster
+      headers: {
+        "Cache-Control": "no-cache",
+        Pragma: "no-cache",
+        Expires: "0",
+      },
     });
 
     const buses = response.data.matchedBuses;
@@ -36,7 +36,7 @@ export const getTourData = createAsyncThunk<ITravelProps[], { from: string; to: 
       label: bus.busType,
       video: bus.videos?.[0] || "",
       offerBox: undefined,
-      img: bus.photos?.[0] || undefined, // Optional image from photos
+      img: bus.photos?.[0] || undefined,
       iconImg: bus.policy?.map((policy: any, idx: number) => ({
         id: idx,
         img: "",
@@ -44,8 +44,8 @@ export const getTourData = createAsyncThunk<ITravelProps[], { from: string; to: 
       })) || [],
       sliderImg: (bus.photos || []).map((img: string) => ({ img })),
       multipleImg: (bus.photos || []).map((img: string) => ({ img })),
-    
-      // Newly added direct mappings
+
+      // Extra direct mappings
       busId: bus.busId,
       busName: bus.busName,
       operatorName: bus.operatorName,
@@ -53,8 +53,8 @@ export const getTourData = createAsyncThunk<ITravelProps[], { from: string; to: 
       seatsAvailable: bus.seatsAvailable,
       totalSeats: bus.totalSeats,
       busStartTime: bus.busStartTime,
-      basePrice: bus.basePrice,
-      totalPrice: bus.totalPrice,
+      basePrice: bus.basePrice ?? 0,
+      totalPrice: bus.totalPrice ?? 0,
       busType: bus.busType,
       departureTime: bus.departureTime,
       arrivalTime: bus.arrivalTime,
@@ -70,12 +70,12 @@ export const getTourData = createAsyncThunk<ITravelProps[], { from: string; to: 
       route: bus.route,
       policy: bus.policy
     }));
-console.log("transformedData" +  JSON.stringify(transformedData,null,2));
+
     return transformedData;
   }
 );
 
-
+// Slice state definition
 interface TourState {
   data: ITravelProps[];
   loading: "idle" | "pending" | "succeeded" | "failed";
@@ -88,31 +88,28 @@ const initialState: TourState = {
   error: null,
 };
 
+// Create the slice
 const TourSlice = createSlice({
   name: "tour",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getTourData.pending, (state) => {
-      if (state.loading === "idle") {
-        state.loading = "pending";
-      }
+      state.loading = "pending";
+      state.error = null;
     });
     builder.addCase(getTourData.fulfilled, (state, action) => {
-      if (state.loading === "pending") {
-        state.data = action.payload;
-        state.loading = "succeeded";
-      }
+      state.data = action.payload;
+      state.loading = "succeeded";
     });
     builder.addCase(getTourData.rejected, (state, action) => {
-      if (state.loading === "pending") {
-        state.loading = "failed";
-        state.error = "Error occurred";
-      }
+      state.loading = "failed";
+      state.error = action.error.message || "Error occurred";
     });
   },
 });
 
 export default TourSlice.reducer;
 
+// Selector to get tour state
 export const selectTour = (state: RootState) => state.tour;
