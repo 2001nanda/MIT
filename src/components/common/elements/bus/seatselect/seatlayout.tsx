@@ -303,23 +303,23 @@ window.open("/bus/booking/booking-page", "_blank");
 
         <div className="legend">
       <div className="legend-item">
-        <img src={seatAvailableSeater.src} alt="Available" className="legend-icon" />
+        <Image src={seatAvailableSeater} alt="Available" width={40} height={40} />
         Available
       </div>
       <div className="legend-item">
-        <img src={seaterFemaleAvailable.src} alt="Female Available" className="legend-icon" />
+        <Image src={seaterFemaleAvailable} alt="Female Available" width={40} height={40} />
         Female Available
       </div>
       <div className="legend-item">
-        <img src={seaterFemaleBooked.src} alt="Female Booked" className="legend-icon" />
+        <Image src={seaterFemaleBooked} alt="Female Booked" width={40} height={40} />
         Female Booked
       </div>
       <div className="legend-item">
-        <img src={seaterBooked.src} alt="Booked" className="legend-icon" />
+        <Image src={seaterBooked} alt="Booked" width={40} height={40} />
         Booked
       </div>
       <div className="legend-item">
-        <img src={seaterSelected.src} alt="Selected" className="legend-icon" />
+        <Image src={seaterSelected} alt="Selected" width={40} height={40}/>
         Selected
       </div>
     </div>
