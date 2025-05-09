@@ -19,12 +19,6 @@ import sleeperBooked from "@/public/assets/sleeper/bookedSleeper.png";
 import sleeperFemaleAvaiable from "@/public/assets/sleeper/sleeperFA.png";
 import sleeperFemaleBooked from "@/public/assets/sleeper/sleeperFB.png";
 import sleeperSelected from "@/public/assets/Sleeper/selectedSleeper.png";
-import seatAvailableSeater1 from "@/public/assets/seater/avaiableSeater1.png";
-import seaterBooked1 from "@/public/assets/seater/bookedSeater1.png";
-import seaterFemaleAvailable1 from "@/public/assets/seater/SeaterAF1.png";
-import seaterFemaleBooked1 from "@/public/assets/seater/seaterBF1.png";
-import seaterSelected1 from "@/public/assets/seater/selectedSeater1.png";
-
 interface SeatLayoutProps {
   seats: Seat[];
   route: Route;
