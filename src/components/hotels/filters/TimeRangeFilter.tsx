@@ -111,7 +111,7 @@ const TimeRangeFilter: React.FC<TimeRangeFilterProps> = ({ filterType }) => {
         .clear-button {
           background-color: transparent;
           border: none;
-          color: rgb(252, 142, 75);
+          color: rgb(239, 63, 62);
           font-size: 12px;
           font-weight: 600;
           cursor: pointer;
@@ -146,13 +146,14 @@ const TimeRangeFilter: React.FC<TimeRangeFilterProps> = ({ filterType }) => {
         }
 
         .time-button.active {
-          background-color: rgb(252, 142, 75);
-          border: 1px solid rgb(252, 142, 75);
+          background-color: rgb(239, 63, 62);
+          border: 1px solid rgb(239, 63, 62);
           color: #fff;
         }
 
         .time-button:hover {
           background-color: #e0e0e0;
+          color:black;
         }
 
         @media (max-width: 480px) {

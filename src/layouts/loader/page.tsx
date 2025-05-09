@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 
-const Loader: React.FC<ILoaderProps> = ({ loaderTimeout }) => {
+const Loader: React.FC<ILoaderProps> = ({ loaderTimeout ,imageName = "loader" }) => {
   const loadingTime = loaderTimeout;
   const [show, setShow] = useState(true);
 
@@ -18,7 +18,7 @@ const Loader: React.FC<ILoaderProps> = ({ loaderTimeout }) => {
   }, [show]);
   return (
     <div className={`loader-wrapper img-gif ${show ? "" : "loaderhide"}`}>
-      <img src={'/assets/images/loader.gif'} alt="Animated GIF" />
+      <img src={`/assets/images/${imageName}.gif`} alt="Animated GIF" />
     </div>
   );
 };

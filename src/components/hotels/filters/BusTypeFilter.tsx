@@ -96,7 +96,7 @@ const BusTypeFilter: React.FC = () => {
         .clear-button {
           background-color: transparent;
           border: none;
-          color: rgb(252, 142, 75);
+          color: rgb(239, 63, 62);
           font-size: 12px;
           font-weight: 600;
           cursor: pointer;
@@ -122,12 +122,13 @@ const BusTypeFilter: React.FC = () => {
           gap: 6px;
         }
         .type-button.active {
-          background-color: rgb(252, 142, 75);
+          background-color: rgb(239, 63, 62);
           color: white;
-          border-color: rgb(252, 142, 75);
+          border-color: rgb(239, 63, 62);
         }
         .type-button:hover {
           background-color: #e0e0e0;
+          color:black;
         }
       `}</style>
     </div>

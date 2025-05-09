@@ -65,7 +65,7 @@ const MENUITEMS = [
            color:rgb(0, 0, 0) !important; /* Ensure red color applies */
         }
         .nav-link:hover {
-          color: #ff9800 !important;
+          color:rgb(239, 63, 62) !important;
         }
         .menu-text {
           font-size: 18px;

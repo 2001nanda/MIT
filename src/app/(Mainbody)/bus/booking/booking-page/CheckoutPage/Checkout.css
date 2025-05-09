@@ -60,9 +60,9 @@
     margin: 25px 0;
   }
   
-  .time-block {
+  /* .time-block {
     text-align: center;
-  }
+  } */
   
   .time {
     font-size: 1.5em;
@@ -97,6 +97,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: 10px;
+    align-items: center; 
+  }
+  .seatNumber{
     margin-top: 10px;
   }
   

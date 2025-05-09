@@ -118,7 +118,25 @@
   border: 2px solid black;
   border-radius: 10px;
   padding: 10px;
-  width: fit-content;
+  /* width: fit-content; */
+  display: flex;
+
+}
+.steering{
+  padding-top: 20px;
+  
+}
+
+.steeringImage{
+  transform: rotate(269deg)
+}
+
+.steering h6{
+  writing-mode: vertical-lr;
+  padding-top: 10px;
+  margin: 0px;
+  transform: rotate(180deg);
+  padding-bottom: 90px;
 }
 
 .upper-deck {
@@ -137,7 +155,7 @@
   width: 100%;
 }
 
-.legend {
+/* .legend {
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -157,7 +175,31 @@
   height: 20px;
   display: inline-block;
   border-radius: 5px;
+} */
+
+
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
 }
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.legend-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
 
 .available {
   background-color: #E5E7EB;
@@ -195,11 +237,11 @@
 }
 
 .seat {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   font-size: 12px;
   font-weight: bold;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 4px;
   display: flex;
   justify-content: center;
@@ -222,7 +264,7 @@
 .seat.blocked {
   cursor: not-allowed;
   pointer-events: none;
-  opacity: 0.6;
+  /* opacity: 0.6; */
 }
 
 .seat.BFA:hover,

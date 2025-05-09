@@ -70,7 +70,7 @@ const GridView: FC<IGridViewProps> = ({
       <br />
       <br />
       <br />
-      <div className="container">
+      <div className="container" style={{maxWidth: "1500px"}}>
         <div className="row">
           {/* Top Filter for Flights */}
           {topFilter && type === "flight" && (

@@ -87,8 +87,26 @@ const CheckoutPage: FC = () => {
     arrivalDate,
     boardingPoint,
     droppingPoint
-    
   } = bookingInfo;
+
+  console.log({
+    busOperator,
+    busType,
+    seatNumber,
+    journeyDate,
+    from,
+    to,
+    departureTime,
+    arrivalTime,
+    baseFare,
+    gst,
+    convenienceFee,
+    duration,
+    arrivalDate,
+    boardingPoint,
+    droppingPoint
+  });
+  
 
   const totalFare = baseFare + gst + convenienceFee;
 
@@ -114,9 +132,9 @@ const CheckoutPage: FC = () => {
 
             <div className="travel-times">
               <div className="time-block">
-                <p className="time">{departureTime}</p>
-                <p className="date">{journeyDate}</p>
-                <p className="city">{from}</p>
+                <h4>{from}</h4>
+                <h6 className="time">{journeyDate} , {boardingPoint?.time}</h6>
+                <h6 className="city">{boardingPoint?.name},{from}</h6>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '10px 0' }}>
@@ -153,25 +171,11 @@ const CheckoutPage: FC = () => {
                 <FlagIcon size={20} color="#0c618e" />
               </div>
               <div className="time-block">
-                <p className="time">{arrivalTime}</p>
-                <p className="date">{arrivalDate}</p>
-                <p className="city">{to}</p>
+              <h4>{to}</h4>
+              <h6 className="time">{arrivalDate} , {droppingPoint?.time}</h6>
+              <h6 className="city">{droppingPoint?.name},{from}</h6>
               </div>
             </div>
-
-            <div className="location-details-two-col">
-  <div className="location-column">
-    <h5>Boarding Point</h5>
-    <p><strong>{boardingPoint?.location || 'Unknown'}</strong> (van pickup)</p>
-    <p>{boardingPoint?.address || 'Unknown'}</p>
-  </div>
-
-  <div className="location-column">
-    <h5>Dropping Point</h5>
-    <p><strong>{droppingPoint?.location || 'Unknown'}</strong></p>
-    <p>{droppingPoint?.address || 'Unknown'}</p>
-  </div>
-</div>
 
 
           </div>
@@ -180,7 +184,7 @@ const CheckoutPage: FC = () => {
   <h4>Passenger Details</h4>
   {bookingInfo?.seatNumber.map((seat: string, index: number) => (
     <div key={index} className="form-row">
-      <p><b>Seat No:</b> {seat}</p>
+      <p className='seatNumber'><b>Seat No:</b> {seat}</p>
 
       <select
         value={passengerDetails[index]?.title || ''}

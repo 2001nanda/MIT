@@ -9,6 +9,22 @@ import Dropdown from "react-bootstrap/Dropdown";
 import "./SeatLayout.css";
 import { useRouter } from "next/navigation";
 import { useRef } from "react"; // Already imported
+import seatAvailableSeater from "@/public/assets/seater/avaiableSeater.png";
+import seaterBooked from "@/public/assets/seater/bookedSeater.png";
+import seaterFemaleAvailable from "@/public/assets/seater/SeaterAF.png";
+import seaterFemaleBooked from "@/public/assets/seater/seaterBF.png";
+import seaterSelected from "@/public/assets/seater/selectedSeater.png";
+import sleeperAvailable from "@/public/assets/sleeper/avaiableSleeper.png";
+import sleeperBooked from "@/public/assets/sleeper/bookedSleeper.png";
+import sleeperFemaleAvaiable from "@/public/assets/sleeper/sleeperFA.png";
+import sleeperFemaleBooked from "@/public/assets/sleeper/sleeperFB.png";
+import sleeperSelected from "@/public/assets/Sleeper/selectedSleeper.png";
+import seatAvailableSeater1 from "@/public/assets/seater/avaiableSeater1.png";
+import seaterBooked1 from "@/public/assets/seater/bookedSeater1.png";
+import seaterFemaleAvailable1 from "@/public/assets/seater/SeaterAF1.png";
+import seaterFemaleBooked1 from "@/public/assets/seater/seaterBF1.png";
+import seaterSelected1 from "@/public/assets/seater/selectedSeater1.png";
+
 interface SeatLayoutProps {
   seats: Seat[];
   route: Route;
@@ -62,6 +78,54 @@ const SeatLayout: FC<SeatLayoutProps> = ({ seats ,route  ,baseItem,formatDuratio
       </div>
     );
   });
+
+  const getSeatImage = (seat: Seat, selectedSeats: Seat[]) => {
+    const isSelected = selectedSeats.some((s) => s.id === seat.id);
+
+  
+    if (seat.type === "seater") {
+      if (isSelected) {
+        return seaterSelected; // Selected image for both types
+      }
+      switch (seat.status) {
+        case "AFM":
+        case "AFA":
+          return seatAvailableSeater; // Available
+        case "BFA":
+          return seaterBooked; // Booked
+        case "BFF":
+          return seaterFemaleBooked; // Female Booked
+        case "AFF":
+          return seaterFemaleAvailable; // Female Available
+        case "blocked":
+          return seaterBooked; // Assuming blocked = booked image
+        default:
+          return seatAvailableSeater; // Fallback
+      }
+    } else if (seat.type === "sleeper") {
+      if (isSelected) {
+        return sleeperSelected; // Selected image for both types
+      }
+      switch (seat.status) {
+        case "AFM":
+        case "AFA":
+          return sleeperAvailable;
+        case "BFA":
+          return sleeperBooked;
+        case "BFF":
+          return sleeperFemaleBooked;
+        case "AFF":
+          return sleeperFemaleAvaiable;
+        case "blocked":
+          return sleeperBooked;
+        default:
+          return sleeperAvailable;
+      }
+    }
+  
+    // Fallback in case type is unrecognized
+    return seatAvailableSeater;
+  };
   
   // const boardingPoints = route.departureLocation.subLocations.map(sl => 
   //   `${formatSubLocationTime(sl.time, sl.isnextday)} ${sl.name}`
@@ -244,12 +308,27 @@ window.open("/bus/booking/booking-page", "_blank");
         <h5 className="text-lg font-semibold mb-2">Choose Your Seat</h5>
 
         <div className="legend">
-          <div className="legend-item"><span className="available"></span> Available</div>
-          <div className="legend-item"><span className="femaleavailable"></span> Female Available</div>
-          <div className="legend-item"><span className="female"></span> Female Booked</div>
-          <div className="legend-item"><span className="booked"></span> Booked</div>
-          <div className="legend-item"><span className="selected"></span> Selected</div>
-        </div>
+      <div className="legend-item">
+        <img src={seatAvailableSeater.src} alt="Available" className="legend-icon" />
+        Available
+      </div>
+      <div className="legend-item">
+        <img src={seaterFemaleAvailable.src} alt="Female Available" className="legend-icon" />
+        Female Available
+      </div>
+      <div className="legend-item">
+        <img src={seaterFemaleBooked.src} alt="Female Booked" className="legend-icon" />
+        Female Booked
+      </div>
+      <div className="legend-item">
+        <img src={seaterBooked.src} alt="Booked" className="legend-icon" />
+        Booked
+      </div>
+      <div className="legend-item">
+        <img src={seaterSelected.src} alt="Selected" className="legend-icon" />
+        Selected
+      </div>
+    </div>
 
         {/* Fare Filter Buttons */}
         <div className="fare-filter flex gap-2 my-4 flex-wrap">
@@ -278,14 +357,18 @@ window.open("/bus/booking/booking-page", "_blank");
 
               return (
                 <div key={deck} className={`seatlayoutborderbox ${deck === 1 ? "upper-deck" : "lower-deck"}`}>
-                  <h6 className="text-md font-bold mb-2">{deck === 0 ? "Lower Deck" : "Upper Deck"}</h6>
+                  <div className="steering">
+                  <Image className="steeringImage" src={steeringIcon} alt="Steering Wheel" width={20} height={20} />
+                  <h6 className="text-md font-bold mb-2">{deck === 0 ? "Lower" : "Upper"}</h6>
+                  </div>
+                  <div style={{ width: '3px', backgroundColor: 'rgb(12, 97, 142)', margin: '0 16px' }}></div>
                   <div
                     className="seats-container"
-                    style={{ gridTemplateColumns: `repeat(${deck === 1 ? maxY + 4 : maxY}, 25px)` }}
+                    // style={{ gridTemplateColumns: `repeat(${deck === 1 ? maxY + 4 : maxY}, 25px)` }}
                   >
-                    <div className="steering" style={{ gridColumn: 1, gridRow: 2 }}>
+                    {/* <div className="steering" style={{ gridColumn: 1, gridRow: 2 }}>
                       <Image src={steeringIcon} alt="Steering Wheel" width={20} height={20} />
-                    </div>
+                    </div> */}
 
                     {deckSeats.map((seat) =>
                       seat.type === "Walkway" ? (
@@ -298,24 +381,49 @@ window.open("/bus/booking/booking-page", "_blank");
                           }}
                         />
                       ) : (
+
                         <div
-                          key={seat.id}
-                          className={`seat ${seat.status} ${selectedSeats.some((s) => s.id === seat.id) ? "selected" : ""}`}
-                          title={`₹${seat.fare.total}`}
-                          onClick={() => handleSeatClick(seat)}
-                          style={{
-                            gridColumn: seat.x+1,
-                            gridRow: seat.y+1,
-                            ...getSeatStyle(seat, selectedSeats),
-                          }}
-                        >
-                          <>
-                            {seat.id}
-                            {fareFilter !== "all" && seat.fare.total === fareFilter && (
-                              <span className="red-dot"></span>
-                            )}
-                          </>
-                        </div>
+                        key={seat.id}
+                        className={`seat ${seat.status} ${selectedSeats.some((s) => s.id === seat.id) ? "selected" : ""}`}
+                        title={`₹${seat.fare.total}`}
+                        onClick={() => handleSeatClick(seat)}
+                        style={{
+                          gridColumn: seat.x + 1,
+                          gridRow: seat.y + 1,
+                          position: "relative", // Make the div position relative for absolute positioning of the seat number
+                        }}
+                      >
+                        <>
+                          <Image
+                            src={getSeatImage(seat, selectedSeats)}
+                            alt={`Seat ${seat.id}`}
+                            className="seat-image"
+                            style={{
+                               width: seat.type === "sleeper" ? "60px" : "35px",
+    height: seat.type === "sleeper" ? "60px" : "35px",
+                            }}
+                          />
+                         {/* Seat number overlay, only if seat is not booked  */}
+{seat.status != "BFA" &&  seat.status != "BFA" && (
+  <span
+    style={{
+      position: "absolute",
+      top: "50%",
+      left: "40%",
+      transform: "translate(-50%, -50%)",
+      color: "black",
+      fontSize: "12px",
+      fontWeight: "bold",
+    }}
+  >
+    {seat.id}
+  </span>
+)}
+                          {fareFilter !== "all" && seat.fare.total === fareFilter && (
+                            <span className="red-dot"></span>
+                          )}
+                        </>
+                      </div>
                       )
                     )}
                   </div>

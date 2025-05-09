@@ -71,7 +71,7 @@ const RangeInputFields: FC<IPriceRangeFilterProps> = ({ min, max }) => {
                     borderRadius: "4px",
                     background: getTrackBackground({
                       values: values,
-                      colors: ["#ccc", "#fc8e4b", "#ccc"],
+                      colors: ["#ccc", "#ef3f3e", "#ccc"],
                       min: min,
                       max: max,
                     }),
@@ -101,7 +101,7 @@ const RangeInputFields: FC<IPriceRangeFilterProps> = ({ min, max }) => {
                   justifyContent: "center",
                   alignItems: "center",
                   boxShadow: "0px 2px 6px #AAA",
-                  background:"#fc8e4b"
+                  background:"#ef3f3e"
                   
                 }}>
                 <div
@@ -115,7 +115,7 @@ const RangeInputFields: FC<IPriceRangeFilterProps> = ({ min, max }) => {
                     padding: "4px",
                     borderRadius: "4px",
                     backgroundColor: "#ef3f3e",
-                    background:"#fc8e4b"
+                    background:"#ef3f3e"
                   }}>
                   {symbol}
                   {(currencyValue * values[index]).toFixed(0)}

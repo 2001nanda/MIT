@@ -106,7 +106,7 @@ const SubRouteFilter: React.FC<SubRouteFilterProps> = ({
       style={{
         backgroundColor: "transparent",  // transparent background
         border: "none",                   // remove border
-        color: "rgb(252, 142, 75)",       // text color
+        color: "rgb(239, 63, 62)",       // text color
         fontSize: "12px",                 // font size
         fontWeight: "600",                // font weight
         cursor: "pointer",               // cursor pointer on hover
@@ -150,7 +150,7 @@ const SubRouteFilter: React.FC<SubRouteFilterProps> = ({
                     marginBottom: "0.5rem",
                     cursor: "pointer",
                     fontSize: "16px",
-                    accentColor: "rgb(252, 142, 75)"
+                    accentColor: "rgb(239, 63, 62)"
                     
                   }}
                 >
