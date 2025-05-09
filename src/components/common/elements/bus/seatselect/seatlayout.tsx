@@ -18,7 +18,7 @@ import sleeperAvailable from "@/public/assets/sleeper/avaiableSleeper.png";
 import sleeperBooked from "@/public/assets/sleeper/bookedSleeper.png";
 import sleeperFemaleAvaiable from "@/public/assets/sleeper/sleeperFA.png";
 import sleeperFemaleBooked from "@/public/assets/sleeper/sleeperFB.png";
-import sleeperSelected from "@/public/assets/Sleeper/selectedSleeper.png";
+import sleeperSelected from "@/public/assets/sleeper/selectedSleeper.png";
 interface SeatLayoutProps {
   seats: Seat[];
   route: Route;
