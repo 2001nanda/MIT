@@ -2,7 +2,9 @@
 import { FC, useState, useEffect } from 'react';
 import "./Checkout.css";
 import { BsBusFront, BsFlag } from 'react-icons/bs';
-
+import seaterSelected from "@/public/assets/seater/selectedSeater.png";
+import sleeperSelected from "@/public/assets/sleeper/selectedSleeper.png";
+import Image from 'next/image';
 
 
 type Passenger = {
@@ -89,7 +91,7 @@ const CheckoutPage: FC = () => {
     droppingPoint
   } = bookingInfo;
 
-  console.log({
+  console.log({ "allDate":
     busOperator,
     busType,
     seatNumber,
@@ -108,7 +110,7 @@ const CheckoutPage: FC = () => {
   });
   
 
-  const totalFare = baseFare + gst + convenienceFee;
+const totalFare = Number(baseFare) + Number(gst) + Number(convenienceFee);
 
   return (
     <div className="checkout-page">
@@ -182,45 +184,58 @@ const CheckoutPage: FC = () => {
 
           <div className="card">
   <h4>Passenger Details</h4>
-  {bookingInfo?.seatNumber.map((seat: string, index: number) => (
-    <div key={index} className="form-row">
-      <p className='seatNumber'><b>Seat No:</b> {seat}</p>
+{bookingInfo?.selectedSeatTypes?.map((seat: { id: string; type: string }, index: number) => (
+  <div key={index} className="form-row">
+  <p className="seat-tooltip-wrapper">
+  <Image
+    src={seat.type === 'sleeper' ? sleeperSelected : seaterSelected}
+    alt={seat.type}
+    width={40}
+    height={40}
+  />
+  <span className="seat-tooltip-text">
+    {seat.type.charAt(0).toUpperCase() + seat.type.slice(1)}
+  </span>
+  <span style={{ color: '#0c618e', fontWeight: 'bold' }}>#{seat.id}</span>
+</p>
 
-      <select
-        value={passengerDetails[index]?.title || ''}
-        onChange={(e) => handlePassengerChange(index, 'title', e.target.value)}
-      >
-        <option value="">Select Title</option>
-        <option value="Mr">Mr</option>
-        <option value="Ms">Ms</option>
-        <option value="Mrs">Mrs</option>
-      </select>
 
-      <input
-        type="text"
-        placeholder="Enter Name"
-        value={passengerDetails[index]?.name || ''}
-        onChange={(e) => handlePassengerChange(index, 'name', e.target.value)}
-      />
+    <select
+      value={passengerDetails[index]?.title || ''}
+      onChange={(e) => handlePassengerChange(index, 'title', e.target.value)}
+    >
+      <option value="">Select Title</option>
+      <option value="Mr">Mr</option>
+      <option value="Ms">Ms</option>
+      <option value="Mrs">Mrs</option>
+    </select>
 
-      <input
-        type="number"
-        placeholder="Enter Age"
-        value={passengerDetails[index]?.age || ''}
-        onChange={(e) => handlePassengerChange(index, 'age', e.target.value)}
-      />
+    <input
+      type="text"
+      placeholder="Enter Name"
+      value={passengerDetails[index]?.name || ''}
+      onChange={(e) => handlePassengerChange(index, 'name', e.target.value)}
+    />
 
-      <select
-        value={passengerDetails[index]?.gender || ''}
-        onChange={(e) => handlePassengerChange(index, 'gender', e.target.value)}
-      >
-        <option value="">Select Gender</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-  ))}
+    <input
+      type="number"
+      placeholder="Enter Age"
+      value={passengerDetails[index]?.age || ''}
+      onChange={(e) => handlePassengerChange(index, 'age', e.target.value)}
+    />
+
+    <select
+      value={passengerDetails[index]?.gender || ''}
+      onChange={(e) => handlePassengerChange(index, 'gender', e.target.value)}
+    >
+      <option value="">Select Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+))}
+
 </div>
 
 
@@ -231,14 +246,17 @@ const CheckoutPage: FC = () => {
             <input type="email" placeholder="✉️ Email" />
           </div>
 
-          <div className="terms">
-            <input
-              type="checkbox"
-              checked={agreeTerms}
-              onChange={(e) => setAgreeTerms(e.target.checked)}
-            />{' '}
-            I Agree To All The Terms & Conditions and Privacy Policy.
-          </div>
+<div className="terms">
+  <label style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+    <input
+      type="checkbox"
+      id="agreeTerms"
+      checked={agreeTerms}
+      onChange={(e) => setAgreeTerms(e.target.checked)}
+    />
+    I Agree To All The Terms & Conditions and Privacy Policy.
+  </label>
+</div>
 
           <button className="continue-btn" onClick={handleLoginToContinue}>
             Login to Continue

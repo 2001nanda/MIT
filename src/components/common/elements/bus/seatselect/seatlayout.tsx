@@ -194,7 +194,6 @@ const [droppingSearch, setDroppingSearch] = useState("");
     if (hasError) {
       return;
     }
-    
   
  // Prepare booking data
  const bookingInfo = {
@@ -202,6 +201,10 @@ const [droppingSearch, setDroppingSearch] = useState("");
   seatCount: selectedSeats.length,
   seatNames: selectedSeats.map(seat => seat.name),
   seatNumber: selectedSeats.map(seat => seat.id),
+   selectedSeatTypes: selectedSeats.map(seat => ({
+    id: seat.id,
+    type: seat.type, // or seat.seatType depending on your actual property name
+  })),
   boardingPoint: selectedBoardingPoint,
   droppingPoint: selectedDroppingPoint,
   totalFare: totalPrice,
@@ -213,14 +216,14 @@ const [droppingSearch, setDroppingSearch] = useState("");
   to: baseItem.route.arrivalLocation.name,
   departureTime: baseItem.route.departureLocation.time,
   arrivalTime: baseItem.route.arrivalLocation.time,
-  baseFare: baseItem.fares.base,
-  gst: baseItem.fares.gst,
+  baseFare: selectedSeats.reduce((total, seat) => total + seat.fare.base, 0),
+  gst: selectedSeats.reduce((total, seat) => total + seat.fare.gst, 0),
   convenienceFee: "200",
-  duration: formatDuration
+  duration: formatDuration,
+
 };
 
-
-sessionStorage.setItem('bookingInfo', JSON.stringify(bookingInfo));
+    console.log("basefare"+JSON.stringify(selectedSeats.reduce((total, seat) => total + seat.fare.base, 0),null,2));
 
 // Store in sessionStorage
 sessionStorage.setItem("bookingInfo", JSON.stringify(bookingInfo));

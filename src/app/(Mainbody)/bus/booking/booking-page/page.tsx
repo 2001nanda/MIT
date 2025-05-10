@@ -19,7 +19,7 @@ const BookingPage: FC = () => {
       <br />
       <br />
 
-      <div style={{ padding: "20px" }}>
+      {/* <div style={{ padding: "20px" }}>
         <button
           onClick={() => router.back()}
           style={{
@@ -34,7 +34,7 @@ const BookingPage: FC = () => {
         >
           ← Back to Seat Layout
         </button>
-      </div>
+      </div> */}
       <CheckoutPage />
     </CustomLayout>
   );

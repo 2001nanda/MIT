@@ -100,10 +100,74 @@
     margin-top: 10px;
     align-items: center; 
   }
+
+.seat-label {
+  width: 150px;
+  font-size: 14px;
+}
+
+.seat-id {
+  color: #0c618e;
+  font-weight: bold;
+}
+
+.form-row select,
+.form-row input {
+  flex: 1;
+  min-width: 120px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
   .seatNumber{
     margin-top: 10px;
+      width: 115px; /* Equal width for all seat type labels */
+  font-size: 14px;
+  font-weight: 500;
   }
   
+.seatNumber {
+  width: 115px; /* Equal width for all seat type labels */
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.seat-type {
+  display: inline-block;
+  min-width: 70px; /* Ensures consistency in layout */
+}
+
+.seat-tooltip-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.seat-tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0c618e;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.seat-tooltip-wrapper:hover .seat-tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
   input,
   select {
     flex: 1;
